@@ -175,6 +175,13 @@ body {
     background: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8));
     z-index: -1;
 }
+@media screen and (max-width: 768px) {
+    .premium-btn {
+        padding: 10px 10px;
+        font-size: 14px;
+        margin-right: 10px;
+    }
+}
 
 /* Floating Elements */
 .floating-elements {

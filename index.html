@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,60 +8,69 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+  
+
 </head>
+
 <body class="bg-gray-50">
 
     <!-- Premium Header -->
-    <header class="premium-header fixed top-0 w-full z-50 transition-all duration-300">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <header class="premium-header fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-md">
+        <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
                 <div class="logo-container">
                     <div class="logo-gradient">
-                        <i class="fas fa-gem text-2xl"></i>
+                        <i class="fas fa-gem text-xl sm:text-2xl"></i>
                     </div>
                 </div>
-                <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Vacation Buddies</span>
+                <span
+                    class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Vacation
+                    Buddies</span>
             </div>
-            
-            <div class="hidden lg:flex items-center space-x-8">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#packages" class="nav-link">Packages</a>
-                <a href="#how-it-works" class="nav-link">How It Works</a>
-                <a href="#faq" class="nav-link">FAQ</a>
+
+            <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
+                <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                <a href="#packages" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Packages</a>
+                <a href="#how-it-works" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">How It
+                    Works</a>
+                <a href="#faq" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">FAQ</a>
             </div>
-            
-            <div class="flex items-center space-x-4">
-                <button class="premium-btn secondary">
-                    <i class="fas fa-phone mr-2"></i>
+
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <button class="premium-btn secondary hidden sm:flex text-sm sm:text-base">
+                    <i class="fas fa-phone mr-1 sm:mr-2"></i>
                     Call Now
                 </button>
-                <button class="premium-btn primary">
-                    <i class="fas fa-calendar mr-2"></i>
+                <button class="premium-btn primary text-sm sm:text-base">
+                    <i class="fas fa-calendar mr-1 sm:mr-2"></i>
                     Book Now
                 </button>
-                
-                <button id="mobile-menu-button" class="lg:hidden text-white focus:outline-none">
-                    <i class="fas fa-bars text-xl"></i>
+
+                <button id="mobile-menu-button" class="lg:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-xl sm:text-2xl"></i>
                 </button>
             </div>
         </nav>
-        
-        <div id="mobile-menu" class="hidden lg:hidden mobile-menu">
-            <div class="mobile-menu-content">
-                <a href="#home" class="mobile-nav-link">Home</a>
-                <a href="#packages" class="mobile-nav-link">Packages</a>
-                <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
-                <a href="#faq" class="mobile-nav-link">FAQ</a>
-                <div class="mobile-buttons">
-                    <button class="premium-btn secondary w-full mb-3">
-                        <i class="fas fa-phone mr-2"></i>
+
+        <div id="mobile-menu" class="lg:hidden mobile-menu hidden">
+            <div class="mobile-menu-content bg-white shadow-lg">
+                <a href="#home" class="mobile-nav-link block py-3 px-6 text-gray-700 hover:bg-gray-100">Home</a>
+                <a href="#packages" class="mobile-nav-link block py-3 px-6 text-gray-700 hover:bg-gray-100">Packages</a>
+                <a href="#how-it-works" class="mobile-nav-link block py-3 px-6 text-gray-700 hover:bg-gray-100">How It
+                    Works</a>
+                <a href="#faq" class="mobile-nav-link block py-3 px-6 text-gray-700 hover:bg-gray-100">FAQ</a>
+                <div class="mobile-buttons px-6 py-4">
+                    <button class="premium-btn secondary w-full mb-3 text-sm sm:text-base">
+                        <i class="fas fa-phone mr-1 sm:mr-2"></i>
                         Call Now
                     </button>
-                    <button class="premium-btn primary w-full">
-                        <i class="fas fa-calendar mr-2"></i>
+                    <button class="premium-btn primary w-full text-sm sm:text-base">
+                        <i class="fas fa-calendar mr-1 sm:mr-2"></i>
                         Book Now
                     </button>
                 </div>
@@ -69,7 +79,8 @@
     </header>
 
     <!-- Premium Hero Section -->
-    <section id="home" class="premium-hero relative min-h-screen flex items-center justify-center text-white overflow-hidden">
+    <section id="home"
+        class="premium-hero relative min-h-screen flex items-center justify-center text-white overflow-hidden">
         <div class="hero-background">
             <video autoplay muted loop class="hero-video">
                 <source src="assets/Home -The Vacation Buddies.mp4" type="video/mp4">
@@ -77,7 +88,7 @@
             </video>
             <div class="hero-overlay"></div>
         </div>
-        
+
         <!-- Floating Elements -->
         <div class="floating-elements">
             <div class="floating-card card-1">
@@ -90,7 +101,7 @@
                 <i class="fas fa-crown text-purple-400"></i>
             </div>
         </div>
-        
+
         <div class="hero-content relative z-10 text-center px-4 max-w-6xl mx-auto">
             <!-- Trust Badge -->
             <div class="trust-badge mb-8">
@@ -105,18 +116,18 @@
                     <span class="text-lg font-medium">Trusted by over 20,000 travelers since 2012</span>
                 </div>
             </div>
-            
+
             <!-- Main Headline -->
             <h1 class="hero-title mb-6">
                 <span class="title-line">Unlock free access to</span>
                 <span class="title-line gradient-text">Las Vegas' best show tickets</span>
             </h1>
-            
+
             <!-- Subtitle -->
             <p class="hero-subtitle mb-8 text-xl opacity-90">
                 Reserve a free package instantly. No purchase or payment info required.
             </p>
-            
+
             <!-- CTA Buttons -->
             <div class="hero-buttons flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <button class="premium-cta primary">
@@ -130,7 +141,7 @@
                     <i class="fas fa-arrow-right ml-2"></i>
                 </button>
             </div>
-            
+
             <!-- Features List -->
             <div class="hero-features mt-12">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -149,7 +160,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Scroll Indicator -->
         <div class="scroll-indicator">
             <div class="scroll-arrow">
@@ -163,7 +174,8 @@
         <div class="package-container">
             <div class="section-title">
                 <h2>Get Two Nights in a Vegas Resort for <span class="text-gradient">Only $19.95</span></h2>
-                <p>Yes, it's actually only $19.95 total. <a href="#" class="text-gradient font-semibold">Learn how</a>.</p>
+                <p>Yes, it's actually only $19.95 total. <a href="#" class="text-gradient font-semibold">Learn how</a>.
+                </p>
                 <p class="text-gradient font-semibold">(+ Get a free $40 Amazon gift card to use asap!)</p>
             </div>
 
@@ -184,14 +196,14 @@
                     <div class="package-content">
                         <h3 class="package-title">2-Night Vegas Stay</h3>
                         <p class="package-subtitle">📍 Vegas Strip Adjacent</p>
-                        
+
                         <ul class="package-features">
                             <li><i class="fas fa-users"></i> 2 Nights for 4 Guests</li>
                             <li><i class="fas fa-bed"></i> Resort Nights</li>
                             <li><i class="fas fa-wifi"></i> Free WiFi</li>
                             <li><i class="fas fa-parking"></i> Free Parking</li>
                         </ul>
-                        
+
                         <div class="package-rating">
                             <div class="stars">
                                 <i class="fas fa-star"></i>
@@ -202,7 +214,7 @@
                             </div>
                             <span class="rating-text">4.5 Rating</span>
                         </div>
-                        
+
                         <div class="package-buttons">
                             <button class="package-btn secondary">More Info</button>
                             <button class="package-btn primary">Reserve Now</button>
@@ -226,14 +238,14 @@
                     <div class="package-content">
                         <h3 class="package-title">LA Comedy Club</h3>
                         <p class="package-subtitle">📍 The STRAT</p>
-                        
+
                         <ul class="package-features">
                             <li><i class="fas fa-ticket-alt"></i> Admission for Two</li>
                             <li><i class="fas fa-moon"></i> Nightly Shows</li>
                             <li><i class="fas fa-utensils"></i> Dinner Included</li>
                             <li><i class="fas fa-cocktail"></i> Welcome Drinks</li>
                         </ul>
-                        
+
                         <div class="package-rating">
                             <div class="stars">
                                 <i class="fas fa-star"></i>
@@ -244,7 +256,7 @@
                             </div>
                             <span class="rating-text">4.5 Rating</span>
                         </div>
-                        
+
                         <div class="package-buttons">
                             <button class="package-btn secondary">More Info</button>
                             <button class="package-btn primary">Reserve Now</button>
@@ -268,14 +280,14 @@
                     <div class="package-content">
                         <h3 class="package-title">$40 Amazon Card</h3>
                         <p class="package-subtitle">📍 Use Now or Later</p>
-                        
+
                         <ul class="package-features">
                             <li><i class="fas fa-gift"></i> Amazon.com Gift Card</li>
                             <li><i class="fas fa-envelope"></i> Delivered digitally</li>
                             <li><i class="fas fa-clock"></i> Instant delivery</li>
                             <li><i class="fas fa-shopping-cart"></i> Use anywhere</li>
                         </ul>
-                        
+
                         <div class="package-rating">
                             <div class="stars">
                                 <i class="fas fa-star"></i>
@@ -286,7 +298,7 @@
                             </div>
                             <span class="rating-text">4.5 Rating</span>
                         </div>
-                        
+
                         <div class="package-buttons">
                             <button class="package-btn secondary">More Info</button>
                             <button class="package-btn primary">Reserve Now</button>
@@ -310,14 +322,14 @@
                     <div class="package-content">
                         <h3 class="package-title">Lunch for Two</h3>
                         <p class="package-subtitle">📍 Pampas Steakhouse</p>
-                        
+
                         <ul class="package-features">
                             <li><i class="fas fa-utensils"></i> In Planet Hollywood</li>
                             <li><i class="fas fa-drumstick-bite"></i> Tableside Buffet</li>
                             <li><i class="fas fa-wine-glass"></i> Premium Drinks</li>
                             <li><i class="fas fa-star"></i> Fine Dining Experience</li>
                         </ul>
-                        
+
                         <div class="package-rating">
                             <div class="stars">
                                 <i class="fas fa-star"></i>
@@ -328,7 +340,7 @@
                             </div>
                             <span class="rating-text">4.5 Rating</span>
                         </div>
-                        
+
                         <div class="package-buttons">
                             <button class="package-btn secondary">More Info</button>
                             <button class="package-btn primary">Reserve Now</button>
@@ -346,7 +358,7 @@
                 <h2 class="cta-title">Yes, It's Only <span class="text-gradient">$19.95</span></h2>
                 <p class="cta-subtitle">Yes, You Get A <span class="text-gradient">$40 Amazon Gift Card</span></p>
                 <p class="text-white text-lg mb-8">Travel any time within the next 6 months. (While supplies last.)</p>
-                
+
                 <div class="cta-buttons">
                     <button class="cta-btn primary">
                         <i class="fas fa-gift mr-2"></i>
@@ -374,7 +386,8 @@
                 <!-- Free Package Card 1 -->
                 <div class="package-card animate-fade-in">
                     <div class="package-image">
-                        <img src="https://plus.unsplash.com/premium_photo-1670535226994-4aa4739a810e?q=80&w=327&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sphere Passes" class="w-full h-full object-cover">
+                        <img src="https://plus.unsplash.com/premium_photo-1670535226994-4aa4739a810e?q=80&w=327&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Sphere Passes" class="w-full h-full object-cover">
                         <div class="package-overlay">
                             <button class="premium-cta primary">
                                 <i class="fas fa-eye mr-2"></i>
@@ -385,14 +398,14 @@
                     <div class="package-content">
                         <h3 class="package-title">Free Sphere Passes</h3>
                         <p class="package-subtitle">📍 Admission For Two</p>
-                        
+
                         <ul class="package-features">
                             <li><i class="fas fa-ticket-alt"></i> 2 Free Passes</li>
                             <li><i class="fas fa-eye"></i> Immersive Experience</li>
                             <li><i class="fas fa-clock"></i> Flexible Timing</li>
                             <li><i class="fas fa-star"></i> Premium Attraction</li>
                         </ul>
-                        
+
                         <div class="package-rating">
                             <div class="stars">
                                 <i class="fas fa-star"></i>
@@ -403,7 +416,7 @@
                             </div>
                             <span class="rating-text">4.5 Rating</span>
                         </div>
-                        
+
                         <div class="package-buttons">
                             <button class="package-btn secondary">Read More</button>
                             <button class="package-btn primary">Book Free Passes</button>
@@ -414,7 +427,8 @@
                 <!-- Free Package Card 2 -->
                 <div class="package-card animate-fade-in">
                     <div class="package-image">
-                        <img src="https://images.unsplash.com/photo-1716769125443-d9606d512993?q=80&w=327&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tesla Rental" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1716769125443-d9606d512993?q=80&w=327&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Tesla Rental" class="w-full h-full object-cover">
                         <div class="package-overlay">
                             <button class="premium-cta primary">
                                 <i class="fas fa-eye mr-2"></i>
@@ -425,14 +439,14 @@
                     <div class="package-content">
                         <h3 class="package-title">Free 2-Day Tesla</h3>
                         <p class="package-subtitle">📍 48-Hour Tesla Rental</p>
-                        
+
                         <ul class="package-features">
                             <li><i class="fas fa-car"></i> 2-Day Rental</li>
                             <li><i class="fas fa-bolt"></i> Electric Vehicle</li>
                             <li><i class="fas fa-map-marker-alt"></i> Pickup Available</li>
                             <li><i class="fas fa-star"></i> Luxury Experience</li>
                         </ul>
-                        
+
                         <div class="package-rating">
                             <div class="stars">
                                 <i class="fas fa-star"></i>
@@ -443,7 +457,7 @@
                             </div>
                             <span class="rating-text">4.5 Rating</span>
                         </div>
-                        
+
                         <div class="package-buttons">
                             <button class="package-btn secondary">Read More</button>
                             <button class="package-btn primary">Book A Free Tesla</button>
@@ -454,7 +468,8 @@
                 <!-- Free Package Card 3 -->
                 <div class="package-card animate-fade-in">
                     <div class="package-image">
-                        <img src="https://images.unsplash.com/photo-1688050425923-3749879ec6fe?q=80&w=422&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blue Man Group" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1688050425923-3749879ec6fe?q=80&w=422&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Blue Man Group" class="w-full h-full object-cover">
                         <div class="package-overlay">
                             <button class="premium-cta primary">
                                 <i class="fas fa-eye mr-2"></i>
@@ -465,14 +480,14 @@
                     <div class="package-content">
                         <h3 class="package-title">Blue Man VIP Night</h3>
                         <p class="package-subtitle">📍 Attractions + Dinner For Two</p>
-                        
+
                         <ul class="package-features">
                             <li><i class="fas fa-theater-masks"></i> Blue Man Group Show</li>
                             <li><i class="fas fa-utensils"></i> Dinner for Two</li>
                             <li><i class="fas fa-star"></i> VIP Experience</li>
                             <li><i class="fas fa-gem"></i> Premium Seating</li>
                         </ul>
-                        
+
                         <div class="package-rating">
                             <div class="stars">
                                 <i class="fas fa-star"></i>
@@ -483,7 +498,7 @@
                             </div>
                             <span class="rating-text">4.5 Rating</span>
                         </div>
-                        
+
                         <div class="package-buttons">
                             <button class="package-btn secondary">Read More</button>
                             <button class="package-btn primary">Reserve Blue Man</button>
@@ -494,7 +509,8 @@
                 <!-- Free Package Card 4 -->
                 <div class="package-card animate-fade-in">
                     <div class="package-image">
-                        <img src="https://images.unsplash.com/photo-1662653554895-8a3f9e33e2fa?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="High Roller" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1662653554895-8a3f9e33e2fa?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="High Roller" class="w-full h-full object-cover">
                         <div class="package-overlay">
                             <button class="premium-cta primary">
                                 <i class="fas fa-eye mr-2"></i>
@@ -505,14 +521,14 @@
                     <div class="package-content">
                         <h3 class="package-title">High Roller Package</h3>
                         <p class="package-subtitle">📍 Attractions + Dinner For Two</p>
-                        
+
                         <ul class="package-features">
                             <li><i class="fas fa-mountain"></i> High Roller Ride</li>
                             <li><i class="fas fa-utensils"></i> Dinner for Two</li>
                             <li><i class="fas fa-eye"></i> City Views</li>
                             <li><i class="fas fa-star"></i> Premium Experience</li>
                         </ul>
-                        
+
                         <div class="package-rating">
                             <div class="stars">
                                 <i class="fas fa-star"></i>
@@ -523,7 +539,7 @@
                             </div>
                             <span class="rating-text">4.5 Rating</span>
                         </div>
-                        
+
                         <div class="package-buttons">
                             <button class="package-btn secondary">Read More</button>
                             <button class="package-btn primary">Book Free Passes</button>
@@ -548,7 +564,8 @@
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <h3 class="text-2xl font-bold text-gray-800 mb-4">Choose Your Package</h3>
-                        <p class="text-gray-600 mb-6">Select from our exclusive packages, offering a variety of premium attractions and dining experiences - all at zero cost to you.</p>
+                        <p class="text-gray-600 mb-6">Select from our exclusive packages, offering a variety of premium
+                            attractions and dining experiences - all at zero cost to you.</p>
                         <div class="step-image">
                             <img src="assets/hi-buddy.gif" alt="Choose Package" class="rounded-lg w-full">
                         </div>
@@ -560,7 +577,8 @@
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h3 class="text-2xl font-bold text-gray-800 mb-4">Confirm Your Info</h3>
-                        <p class="text-gray-600 mb-6">Complete our quick sign up form with just your name and phone number. Your details are secure and used solely to confirm your hotel reservation.</p>
+                        <p class="text-gray-600 mb-6">Complete our quick sign up form with just your name and phone
+                            number. Your details are secure and used solely to confirm your hotel reservation.</p>
                         <div class="step-image">
                             <img src="assets/choose-package.gif" alt="Confirm Info" class="rounded-lg w-full">
                         </div>
@@ -572,7 +590,8 @@
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h3 class="text-2xl font-bold text-gray-800 mb-4">Attend Tour & Get Rewards</h3>
-                        <p class="text-gray-600 mb-6">Attend a tour at one of our featured Las Vegas resorts and receive your selected gift package. There's no obligation to buy, sign, or join anything.</p>
+                        <p class="text-gray-600 mb-6">Attend a tour at one of our featured Las Vegas resorts and receive
+                            your selected gift package. There's no obligation to buy, sign, or join anything.</p>
                         <div class="step-image">
                             <img src="assets/immegration.gif" alt="Attend Tour" class="rounded-lg w-full">
                         </div>
@@ -617,32 +636,42 @@
                 <div class="space-y-6">
                     <div class="faq-item">
                         <h3 class="faq-question">Is this stuff really free? What's the catch?</h3>
-                        <p class="faq-answer">Yes, all packages have no hidden fees. All we ask in return is for you to attend a presentation at a partner Vegas resort, with no obligations to purchase anything to receive your gifts.</p>
+                        <p class="faq-answer">Yes, all packages have no hidden fees. All we ask in return is for you to
+                            attend a presentation at a partner Vegas resort, with no obligations to purchase anything to
+                            receive your gifts.</p>
                     </div>
 
                     <div class="faq-item">
                         <h3 class="faq-question">What do I need to do to get started?</h3>
-                        <p class="faq-answer">To get started, simply select a package from our offerings and complete the quick sign-up form. No payment info is needed - just your name, email and phone number. We'll only use it for reservation purposes.</p>
+                        <p class="faq-answer">To get started, simply select a package from our offerings and complete
+                            the quick sign-up form. No payment info is needed - just your name, email and phone number.
+                            We'll only use it for reservation purposes.</p>
                     </div>
 
                     <div class="faq-item">
                         <h3 class="faq-question">What is the guided tour? What can I expect?</h3>
-                        <p class="faq-answer">The guided tour is an informative visit to one of our partner resorts. You'll learn about the resort's amenities and offerings to save money on your next hotel stay. There's no obligation to buy, sign, or join anything.</p>
+                        <p class="faq-answer">The guided tour is an informative visit to one of our partner resorts.
+                            You'll learn about the resort's amenities and offerings to save money on your next hotel
+                            stay. There's no obligation to buy, sign, or join anything.</p>
                     </div>
 
                     <div class="faq-item">
                         <h3 class="faq-question">Can I choose the date and time of my tour?</h3>
-                        <p class="faq-answer">Yes, we offer flexible scheduling options and will help find the best day and time availability for you.</p>
+                        <p class="faq-answer">Yes, we offer flexible scheduling options and will help find the best day
+                            and time availability for you.</p>
                     </div>
 
                     <div class="faq-item">
                         <h3 class="faq-question">What if I need more show tickets or vouchers?</h3>
-                        <p class="faq-answer">Have more guests? Our friendly concierge is here to help. For participating you'll receive exclusive access to purchase our show tickets, dinner vouchers, and more at our wholesale prices.</p>
+                        <p class="faq-answer">Have more guests? Our friendly concierge is here to help. For
+                            participating you'll receive exclusive access to purchase our show tickets, dinner vouchers,
+                            and more at our wholesale prices.</p>
                     </div>
 
                     <div class="faq-item">
                         <h3 class="faq-question">What if I have more questions?</h3>
-                        <p class="faq-answer">Our local team of Vacation Buddies are based here in Las Vegas and are available to assist you by phone seven days per week, from 9am-6pm PST.</p>
+                        <p class="faq-answer">Our local team of Vacation Buddies are based here in Las Vegas and are
+                            available to assist you by phone seven days per week, from 9am-6pm PST.</p>
                     </div>
                 </div>
             </div>
@@ -662,38 +691,44 @@
                     </div>
                     <p class="text-gray-300 mb-4">We're the best buddies your vacation could have.</p>
                     <div class="space-y-3">
-                        <a href="mailto:support@thevacationbuddies.com" class="flex items-center text-gray-300 hover:text-white transition-colors">
+                        <a href="mailto:support@thevacationbuddies.com"
+                            class="flex items-center text-gray-300 hover:text-white transition-colors">
                             <i class="fas fa-envelope mr-3"></i>
                             support@thevacationbuddies.com
                         </a>
-                        <a href="tel:8888128339" class="flex items-center text-gray-300 hover:text-white transition-colors">
+                        <a href="tel:8888128339"
+                            class="flex items-center text-gray-300 hover:text-white transition-colors">
                             <i class="fas fa-phone mr-3"></i>
                             (888) 812-8339
                         </a>
                         <p class="text-sm text-gray-400">Call Us! (9am - 6pm PST, 7 Days)</p>
                     </div>
                 </div>
-                
+
                 <div class="grid grid-cols-2 gap-8">
                     <div>
                         <h4 class="font-bold text-lg mb-4">Quick Links</h4>
                         <ul class="space-y-2">
                             <li><a href="#home" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
-                            <li><a href="#packages" class="text-gray-300 hover:text-white transition-colors">Packages</a></li>
-                            <li><a href="#how-it-works" class="text-gray-300 hover:text-white transition-colors">How It Works</a></li>
+                            <li><a href="#packages"
+                                    class="text-gray-300 hover:text-white transition-colors">Packages</a></li>
+                            <li><a href="#how-it-works" class="text-gray-300 hover:text-white transition-colors">How It
+                                    Works</a></li>
                             <li><a href="#faq" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="font-bold text-lg mb-4">Legal</h4>
                         <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Terms & Conditions</a></li>
-                            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Data Use Policy</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Terms &
+                                    Conditions</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Data Use Policy</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            
+
             <div class="border-t border-gray-700 mt-12 pt-6 text-center text-gray-400 text-sm">
                 <p>&copy; 2025 The Vacation Buddies</p>
                 <p>Promotions Offered to Advertise Timeshare</p>
@@ -709,22 +744,19 @@
 
     <script>
         // Loading Screen
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             const loading = document.getElementById('loading');
             loading.classList.add('hidden');
         });
 
         // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('show');
         });
 
         // Header Scroll Effect
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const header = document.querySelector('.premium-header');
             if (window.scrollY > 100) {
                 header.classList.add('scrolled');
@@ -749,15 +781,15 @@
 
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', function() {
+            question.addEventListener('click', function () {
                 const answer = this.nextElementSibling;
                 const isOpen = answer.style.display === 'block';
-                
+
                 // Close all other answers
                 document.querySelectorAll('.faq-answer').forEach(ans => {
                     ans.style.display = 'none';
                 });
-                
+
                 // Toggle current answer
                 answer.style.display = isOpen ? 'none' : 'block';
             });
@@ -765,11 +797,11 @@
 
         // Package Card Hover Effects
         document.querySelectorAll('.package-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 this.style.transform = 'translateY(-10px) scale(1.02)';
             });
-            
-            card.addEventListener('mouseleave', function() {
+
+            card.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
@@ -780,7 +812,7 @@
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
@@ -798,4 +830,5 @@
         });
     </script>
 </body>
+
 </html>
