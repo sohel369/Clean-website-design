@@ -1,1351 +1,801 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>The Vacation Buddies - Premium Vegas Packages</title>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-      <style>
-            * {
-                  margin: 0;
-                  padding: 0;
-                  box-sizing: border-box;
-            }
-
-            :root {
-                  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
-                  --secondary-gradient: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 50%, #6366f1 100%);
-                  --accent-gradient: linear-gradient(135deg, #f59e0b 0%, #f97316 50%, #ef4444 100%);
-                  --success-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
-                  --dark-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-                  --glass-bg: rgba(255, 255, 255, 0.1);
-                  --glass-border: rgba(255, 255, 255, 0.2);
-                  --text-primary: #0f172a;
-                  --text-secondary: #64748b;
-                  --text-light: rgba(255, 255, 255, 0.9);
-            }
-
-            body {
-                  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-                  line-height: 1.6;
-                  color: var(--text-primary);
-                  overflow-x: hidden;
-                  font-weight: 400;
-            }
-
-            .container {
-                  max-width: 1200px;
-                  margin: 0 auto;
-                  padding: 0 24px;
-            }
-
-            /* Premium Header */
-            .header {
-                  background: var(--primary-gradient);
-                  position: relative;
-                  overflow: hidden;
-                  min-height: 100vh;
-                  display: flex;
-                  align-items: center;
-            }
-
-            .header::before {
-                  content: '';
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  right: 0;
-                  bottom: 0;
-                  background: 
-                        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-                  animation: floating 20s ease-in-out infinite;
-            }
-
-            @keyframes floating {
-                  0%, 100% { transform: translateY(0px) rotate(0deg); }
-                  50% { transform: translateY(-20px) rotate(180deg); }
-            }
-
-            .hero-content {
-                  position: relative;
-                  z-index: 2;
-                  text-align: center;
-                  color: var(--text-light);
-            }
-
-            .trust-badge {
-                  display: inline-block;
-                  background: var(--glass-bg);
-                  backdrop-filter: blur(20px);
-                  border: 1px solid var(--glass-border);
-                  padding: 8px 24px;
-                  border-radius: 50px;
-                  font-size: 14px;
-                  font-weight: 500;
-                  margin-bottom: 32px;
-                  animation: fadeInUp 0.8s ease-out 0.2s both;
-            }
-
-            .hero-title {
-                  font-size: clamp(2.5rem, 5vw, 4rem);
-                  font-weight: 700;
-                  line-height: 1.1;
-                  margin-bottom: 24px;
-                  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-                  -webkit-background-clip: text;
-                  -webkit-text-fill-color: transparent;
-                  background-clip: text;
-                  animation: fadeInUp 0.8s ease-out 0.4s both;
-            }
-
-            .hero-subtitle {
-                  font-size: 1.25rem;
-                  font-weight: 400;
-                  margin-bottom: 48px;
-                  opacity: 0.9;
-                  max-width: 600px;
-                  margin-left: auto;
-                  margin-right: auto;
-                  animation: fadeInUp 0.8s ease-out 0.6s both;
-            }
-
-            .cta-buttons {
-                  display: flex;
-                  flex-wrap: wrap;
-                  gap: 20px;
-                  justify-content: center;
-                  animation: fadeInUp 0.8s ease-out 0.8s both;
-            }
-
-            .cta-btn {
-                  background: var(--accent-gradient);
-                  color: white;
-                  padding: 16px 32px;
-                  border: none;
-                  border-radius: 50px;
-                  font-size: 16px;
-                  font-weight: 600;
-                  cursor: pointer;
-                  transition: all 0.3s ease;
-                  text-decoration: none;
-                  display: inline-block;
-                  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-                  position: relative;
-                  overflow: hidden;
-            }
-
-            .cta-btn::before {
-                  content: '';
-                  position: absolute;
-                  top: 0;
-                  left: -100%;
-                  width: 100%;
-                  height: 100%;
-                  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-                  transition: left 0.5s ease;
-            }
-
-            .cta-btn:hover::before {
-                  left: 100%;
-            }
-
-            .cta-btn:hover {
-                  transform: translateY(-3px);
-                  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
-            }
-
-            .secondary-btn {
-                  background: var(--glass-bg);
-                  border: 2px solid var(--glass-border);
-                  color: white;
-                  backdrop-filter: blur(20px);
-            }
-
-            .secondary-btn:hover {
-                  background: rgba(255, 255, 255, 0.2);
-            }
-
-            /* Premium Deal Section */
-            .main-deal {
-                  background: var(--dark-gradient);
-                  color: white;
-                  padding: 120px 0;
-                  text-align: center;
-                  position: relative;
-                  overflow: hidden;
-            }
-
-            .main-deal::before {
-                  content: '';
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  right: 0;
-                  bottom: 0;
-                  background: 
-                        radial-gradient(circle at 30% 20%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%);
-            }
-
-            .deal-content {
-                  position: relative;
-                  z-index: 2;
-            }
-
-            .deal-title {
-                  font-size: clamp(2rem, 4vw, 3.5rem);
-                  font-weight: 700;
-                  margin-bottom: 24px;
-                  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
-                  -webkit-background-clip: text;
-                  -webkit-text-fill-color: transparent;
-                  background-clip: text;
-            }
-
-            .deal-price {
-                  font-size: clamp(3rem, 6vw, 5rem);
-                  font-weight: 800;
-                  background: var(--accent-gradient);
-                  -webkit-background-clip: text;
-                  -webkit-text-fill-color: transparent;
-                  background-clip: text;
-                  margin: 32px 0;
-                  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            }
-
-            .deal-subtitle {
-                  font-size: 1.2rem;
-                  margin-bottom: 16px;
-                  opacity: 0.9;
-            }
-
-            /* Premium Package Grid */
-            .packages-section {
-                  padding: 120px 0;
-                  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-            }
-
-            .section-title {
-                  font-size: clamp(2rem, 4vw, 3rem);
-                  font-weight: 700;
-                  text-align: center;
-                  margin-bottom: 64px;
-                  background: var(--primary-gradient);
-                  -webkit-background-clip: text;
-                  -webkit-text-fill-color: transparent;
-                  background-clip: text;
-            }
-
-            .packages-grid {
-                  display: grid;
-                  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-                  gap: 32px;
-                  margin-bottom: 80px;
-            }
-
-            .package-card {
-                  background: rgba(255, 255, 255, 0.8);
-                  backdrop-filter: blur(20px);
-                  border: 1px solid rgba(255, 255, 255, 0.3);
-                  border-radius: 24px;
-                  padding: 40px;
-                  transition: all 0.4s ease;
-                  position: relative;
-                  overflow: hidden;
-                  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            }
-
-            .package-card::before {
-                  content: '';
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  right: 0;
-                  height: 4px;
-                  background: var(--primary-gradient);
-            }
-
-            .package-card:hover {
-                  transform: translateY(-12px) scale(1.02);
-                  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
-                  background: rgba(255, 255, 255, 0.95);
-            }
-
-            .package-icon {
-                  width: 80px;
-                  height: 80px;
-                  background: var(--primary-gradient);
-                  border-radius: 20px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  margin: 0 auto 24px;
-                  color: white;
-                  font-size: 32px;
-                  transition: all 0.3s ease;
-            }
-
-            .package-card:hover .package-icon {
-                  transform: rotate(10deg) scale(1.1);
-            }
-
-            .package-title {
-                  font-size: 1.5rem;
-                  font-weight: 600;
-                  margin-bottom: 8px;
-                  text-align: center;
-                  color: var(--text-primary);
-            }
-
-            .package-subtitle {
-                  color: var(--text-secondary);
-                  text-align: center;
-                  margin-bottom: 24px;
-                  font-weight: 500;
-            }
-
-            .package-features {
-                  list-style: none;
-                  margin-bottom: 32px;
-            }
-
-            .package-features li {
-                  padding: 12px 0;
-                  color: var(--text-primary);
-                  position: relative;
-                  padding-left: 32px;
-                  font-weight: 500;
-            }
-
-            .package-features li::before {
-                  content: '';
-                  position: absolute;
-                  left: 0;
-                  top: 50%;
-                  transform: translateY(-50%);
-                  width: 20px;
-                  height: 20px;
-                  background: var(--success-gradient);
-                  border-radius: 50%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-            }
-
-            .package-features li::after {
-                  content: '✓';
-                  position: absolute;
-                  left: 6px;
-                  top: 50%;
-                  transform: translateY(-50%);
-                  color: white;
-                  font-size: 12px;
-                  font-weight: bold;
-            }
-
-            .rating {
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  margin-bottom: 32px;
-                  gap: 8px;
-            }
-
-            .stars {
-                  background: var(--accent-gradient);
-                  -webkit-background-clip: text;
-                  -webkit-text-fill-color: transparent;
-                  background-clip: text;
-                  font-size: 18px;
-            }
-
-            .rating-score {
-                  font-weight: 600;
-                  color: var(--text-primary);
-            }
-
-            .reserve-btn {
-                  background: var(--success-gradient);
-                  color: white;
-                  border: none;
-                  padding: 16px 32px;
-                  border-radius: 50px;
-                  cursor: pointer;
-                  font-weight: 600;
-                  width: 100%;
-                  transition: all 0.3s ease;
-                  font-size: 16px;
-                  position: relative;
-                  overflow: hidden;
-            }
-
-            .reserve-btn::before {
-                  content: '';
-                  position: absolute;
-                  top: 0;
-                  left: -100%;
-                  width: 100%;
-                  height: 100%;
-                  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-                  transition: left 0.5s ease;
-            }
-
-            .reserve-btn:hover::before {
-                  left: 100%;
-            }
-
-            .reserve-btn:hover {
-                  transform: translateY(-2px);
-                  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.4);
-            }
-
-            /* Free Packages Section */
-            .free-packages {
-                  padding: 120px 0;
-                  background: var(--dark-gradient);
-                  color: white;
-                  position: relative;
-                  overflow: hidden;
-            }
-
-            .free-packages::before {
-                  content: '';
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  right: 0;
-                  bottom: 0;
-                  background: 
-                        radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 70%, rgba(217, 70, 239, 0.2) 0%, transparent 50%);
-            }
-
-            .free-packages-content {
-                  position: relative;
-                  z-index: 2;
-            }
-
-            .free-packages-grid {
-                  display: grid;
-                  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                  gap: 32px;
-            }
-
-            .free-package-card {
-                  background: var(--glass-bg);
-                  backdrop-filter: blur(20px);
-                  border: 1px solid var(--glass-border);
-                  border-radius: 20px;
-                  padding: 32px;
-                  text-align: center;
-                  transition: all 0.4s ease;
-            }
-
-            .free-package-card:hover {
-                  background: rgba(255, 255, 255, 0.15);
-                  transform: translateY(-8px);
-                  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
-            }
-
-            .free-package-image {
-                  width: 100px;
-                  height: 100px;
-                  background: var(--accent-gradient);
-                  border-radius: 20px;
-                  margin: 0 auto 24px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-size: 40px;
-                  transition: all 0.3s ease;
-            }
-
-            .free-package-card:hover .free-package-image {
-                  transform: rotate(5deg) scale(1.1);
-            }
-
-            .free-package-card h3 {
-                  font-size: 1.25rem;
-                  font-weight: 600;
-                  margin-bottom: 8px;
-            }
-
-            .free-package-card p {
-                  opacity: 0.9;
-                  margin-bottom: 24px;
-            }
-
-            /* How It Works Section */
-            .how-it-works {
-                  padding: 120px 0;
-                  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-            }
-
-            .steps-grid {
-                  display: grid;
-                  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                  gap: 48px;
-                  margin-top: 64px;
-            }
-
-            .step-card {
-                  text-align: center;
-                  padding: 48px 32px;
-                  border-radius: 24px;
-                  background: rgba(255, 255, 255, 0.8);
-                  backdrop-filter: blur(20px);
-                  border: 1px solid rgba(255, 255, 255, 0.3);
-                  transition: all 0.4s ease;
-                  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            }
-
-            .step-card:hover {
-                  transform: translateY(-8px);
-                  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
-                  background: rgba(255, 255, 255, 0.95);
-            }
-
-            .step-number {
-                  width: 80px;
-                  height: 80px;
-                  background: var(--primary-gradient);
-                  color: white;
-                  border-radius: 20px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-size: 32px;
-                  font-weight: 700;
-                  margin: 0 auto 24px;
-                  transition: all 0.3s ease;
-            }
-
-            .step-card:hover .step-number {
-                  transform: scale(1.1) rotate(5deg);
-            }
-
-            .step-title {
-                  font-size: 1.5rem;
-                  font-weight: 600;
-                  margin-bottom: 16px;
-                  color: var(--text-primary);
-            }
-
-            .step-description {
-                  color: var(--text-secondary);
-                  line-height: 1.6;
-                  font-weight: 400;
-            }
-
-            .benefits-grid {
-                  display: grid;
-                  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                  gap: 32px;
-                  margin-top: 64px;
-            }
-
-            .benefit-item {
-                  text-align: center;
-                  padding: 24px;
-            }
-
-            .benefit-icon {
-                  width: 80px;
-                  height: 80px;
-                  background: var(--success-gradient);
-                  border-radius: 20px;
-                  margin: 0 auto 16px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  color: white;
-                  font-size: 24px;
-                  transition: all 0.3s ease;
-            }
-
-            .benefit-item:hover .benefit-icon {
-                  transform: scale(1.1);
-            }
-
-            .benefit-item p {
-                  font-weight: 600;
-                  color: var(--text-primary);
-            }
-
-            /* FAQ Section */
-            .faq-section {
-                  padding: 120px 0;
-                  background: var(--dark-gradient);
-                  color: white;
-            }
-
-            .faq-item {
-                  background: var(--glass-bg);
-                  backdrop-filter: blur(20px);
-                  border: 1px solid var(--glass-border);
-                  margin-bottom: 24px;
-                  border-radius: 16px;
-                  overflow: hidden;
-                  transition: all 0.3s ease;
-            }
-
-            .faq-item:hover {
-                  background: rgba(255, 255, 255, 0.15);
-            }
-
-            .faq-question {
-                  padding: 24px 32px;
-                  background: transparent;
-                  color: white;
-                  cursor: pointer;
-                  font-weight: 600;
-                  font-size: 1.1rem;
-                  border: none;
-                  width: 100%;
-                  text-align: left;
-                  transition: all 0.3s ease;
-                  position: relative;
-            }
-
-            .faq-question::after {
-                  content: '+';
-                  position: absolute;
-                  right: 32px;
-                  top: 50%;
-                  transform: translateY(-50%);
-                  font-size: 24px;
-                  font-weight: 300;
-                  transition: transform 0.3s ease;
-            }
-
-            .faq-question.active::after {
-                  transform: translateY(-50%) rotate(45deg);
-            }
-
-            .faq-answer {
-                  padding: 0 32px;
-                  max-height: 0;
-                  overflow: hidden;
-                  transition: all 0.3s ease;
-                  background: rgba(255, 255, 255, 0.05);
-            }
-
-            .faq-answer.active {
-                  padding: 24px 32px;
-                  max-height: 200px;
-            }
-
-            /* Footer */
-            .footer {
-                  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-                  color: white;
-                  padding: 80px 0 40px;
-            }
-
-            .footer-content {
-                  display: grid;
-                  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                  gap: 48px;
-                  margin-bottom: 48px;
-            }
-
-            .footer-section h3 {
-                  margin-bottom: 24px;
-                  background: var(--primary-gradient);
-                  -webkit-background-clip: text;
-                  -webkit-text-fill-color: transparent;
-                  background-clip: text;
-                  font-weight: 600;
-                  font-size: 1.2rem;
-            }
-
-            .footer-section a {
-                  color: rgba(255, 255, 255, 0.8);
-                  text-decoration: none;
-                  margin-bottom: 12px;
-                  display: block;
-                  transition: all 0.3s ease;
-                  font-weight: 400;
-            }
-
-            .footer-section a:hover {
-                  color: white;
-                  transform: translateX(4px);
-            }
-
-            .footer-bottom {
-                  border-top: 1px solid rgba(255, 255, 255, 0.1);
-                  padding-top: 32px;
-                  margin-top: 32px;
-                  text-align: center;
-                  color: rgba(255, 255, 255, 0.6);
-            }
-
-            /* Modal Styles */
-            .modal {
-                  position: fixed;
-                  z-index: 1000;
-                  left: 0;
-                  top: 0;
-                  width: 100%;
-                  height: 100%;
-                  background: rgba(0, 0, 0, 0.8);
-                  backdrop-filter: blur(10px);
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-            }
-
-            .modal-content {
-                  background: rgba(255, 255, 255, 0.95);
-                  backdrop-filter: blur(20px);
-                  border: 1px solid rgba(255, 255, 255, 0.3);
-                  margin: 20px;
-                  padding: 48px;
-                  border-radius: 24px;
-                  width: 90%;
-                  max-width: 500px;
-                  position: relative;
-                  box-shadow: 0 32px 128px rgba(0, 0, 0, 0.3);
-                  animation: modalSlideIn 0.4s ease-out;
-            }
-
-            @keyframes modalSlideIn {
-                  from { opacity: 0; transform: translateY(-50px) scale(0.9); }
-                  to { opacity: 1; transform: translateY(0) scale(1); }
-            }
-
-            .close {
-                  position: absolute;
-                  right: 24px;
-                  top: 24px;
-                  width: 40px;
-                  height: 40px;
-                  background: var(--primary-gradient);
-                  color: white;
-                  border: none;
-                  border-radius: 50%;
-                  cursor: pointer;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-size: 20px;
-                  transition: all 0.3s ease;
-            }
-
-            .close:hover {
-                  transform: scale(1.1) rotate(90deg);
-            }
-
-            .modal h2 {
-                  margin-bottom: 32px;
-                  background: var(--primary-gradient);
-                  -webkit-background-clip: text;
-                  -webkit-text-fill-color: transparent;
-                  background-clip: text;
-                  font-weight: 700;
-                  font-size: 1.8rem;
-            }
-
-            .form-group {
-                  margin-bottom: 24px;
-            }
-
-            .form-group label {
-                  display: block;
-                  margin-bottom: 8px;
-                  font-weight: 600;
-                  color: var(--text-primary);
-            }
-
-            .form-group input {
-                  width: 100%;
-                  padding: 16px;
-                  border: 2px solid rgba(0, 0, 0, 0.1);
-                  border-radius: 12px;
-                  font-size: 16px;
-                  font-family: inherit;
-                  transition: all 0.3s ease;
-                  background: rgba(255, 255, 255, 0.8);
-            }
-
-            .form-group input:focus {
-                  outline: none;
-                  border-color: #6366f1;
-                  background: white;
-                  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
-            }
-
-            .form-group input[readonly] {
-                  background: rgba(0, 0, 0, 0.05);
-                  color: var(--text-secondary);
-            }
-
-            .submit-btn {
-                  background: var(--primary-gradient);
-                  color: white;
-                  padding: 18px 36px;
-                  border: none;
-                  border-radius: 50px;
-                  font-size: 16px;
-                  font-weight: 600;
-                  cursor: pointer;
-                  width: 100%;
-                  transition: all 0.3s ease;
-                  position: relative;
-                  overflow: hidden;
-            }
-
-            .submit-btn::before {
-                  content: '';
-                  position: absolute;
-                  top: 0;
-                  left: -100%;
-                  width: 100%;
-                  height: 100%;
-                  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-                  transition: left 0.5s ease;
-            }
-
-            .submit-btn:hover::before {
-                  left: 100%;
-            }
-
-            .submit-btn:hover {
-                  transform: translateY(-2px);
-                  box-shadow: 0 12px 48px rgba(99, 102, 241, 0.4);
-            }
-
-            /* Animations */
-            @keyframes fadeInUp {
-                  from {
-                        opacity: 0;
-                        transform: translateY(30px);
-                  }
-                  to {
-                        opacity: 1;
-                        transform: translateY(0);
-                  }
-            }
-
-            /* Responsive Design */
-            @media (max-width: 768px) {
-                  .container { padding: 0 20px; }
-                  .hero-title { font-size: 2.5rem; }
-                  .deal-title { font-size: 2rem; }
-                  .deal-price { font-size: 3rem; }
-                  .cta-buttons { flex-direction: column; align-items: center; }
-                  .packages-grid { grid-template-columns: 1fr; }
-                  .modal-content { padding: 32px 24px; margin: 20px; }
-                  .package-card, .step-card { padding: 32px 24px; }
-            }
-
-            @media (max-width: 480px) {
-                  .header { min-height: 80vh; }
-                  .packages-section, .how-it-works, .free-packages, .faq-section { padding: 80px 0; }
-                  .hero-subtitle { font-size: 1.1rem; }
-            }
-
-            /* Accessibility */
-            .skip-link {
-                  position: absolute;
-                  top: -40px;
-                  left: 6px;
-                  background: var(--primary-gradient);
-                  color: white;
-                  padding: 8px 16px;
-                  text-decoration: none;
-                  border-radius: 8px;
-                  transition: top 0.3s;
-                  font-weight: 600;
-            }
-
-            .skip-link:focus {
-                  top: 6px;
-            }
-
-            /* Focus styles for better accessibility */
-            .cta-btn:focus, .reserve-btn:focus, .submit-btn:focus {
-                  outline: 3px solid rgba(99, 102, 241, 0.6);
-                  outline-offset: 2px;
-            }
-      </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Buddies - Premium Las Vegas Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<body class="bg-gray-50">
 
-<body>
-      <a href="#main" class="skip-link">Skip to Main Content</a>
-
-      <header class="header">
-            <div class="container">
-                  <div class="hero-content">
-                        <div class="trust-badge">
-                              Trusted by over 20,000 travelers since 2012
-                        </div>
-                        <h1 class="hero-title">
-                              Unlock free access to Las Vegas' best show tickets
-                        </h1>
-                        <p class="hero-subtitle">
-                              Reserve experiences for as soon as tomorrow. No purchase or payment info required.
-                        </p>
-                        <div class="cta-buttons">
-                              <button class="cta-btn" onclick="scrollToPackages()">Reserve Your Free Package Now →</button>
-                              <button class="cta-btn secondary-btn" onclick="scrollToMainDeal()">Reserve 2 Hotel Nights for $20 →</button>
-                        </div>
-                  </div>
+    <!-- Premium Header -->
+    <header class="premium-header fixed top-0 w-full z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="logo-container">
+                    <div class="logo-gradient">
+                        <i class="fas fa-gem text-2xl"></i>
+                    </div>
+                </div>
+                <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Vacation Buddies</span>
             </div>
-      </header>
-
-      <section id="main-deal" class="main-deal">
-            <div class="container">
-                  <div class="deal-content">
-                        <h2 class="deal-title">Get Two Nights in a Vegas Resort for Only</h2>
-                        <div class="deal-price">$19.95</div>
-                        <p class="deal-subtitle">Yes, it's actually only $19.95 total. Learn how.</p>
-                        <p class="deal-subtitle">(+ Get a free $40 Amazon gift card to use asap!)</p>
-                        <button class="cta-btn" onclick="scrollToPackages()">Reserve Your 2-Night Vegas Getaway</button>
-                  </div>
-            </div>
-      </section>
-
-      <main id="main" class="packages-section">
-            <div class="container">
-                  <h2 class="section-title">2-Night Vegas Getaway Package</h2>
-                  <div class="packages-grid">
-                        <div class="package-card">
-                              <div class="package-icon">🏨</div>
-                              <h3 class="package-title">2-Night Vegas Stay</h3>
-                              <p class="package-subtitle">Vegas Strip Adjacent</p>
-                              <ul class="package-features">
-                                    <li>2 Nights for 4 Guests</li>
-                                    <li>Resort Nights</li>
-                                    <li>Travel within 6 months</li>
-                              </ul>
-                              <div class="rating">
-                                    <span class="stars">★★★★★</span>
-                                    <span class="rating-score">4.5</span>
-                              </div>
-                              <button class="reserve-btn" onclick="openReservation('vegas-stay')">Reserve Free Tickets</button>
-                        </div>
-
-                        <div class="package-card">
-                              <div class="package-icon">🎁</div>
-                              <h3 class="package-title">$40 Amazon Card</h3>
-                              <p class="package-subtitle">Use Now or Later</p>
-                              <ul class="package-features">
-                                    <li>Amazon.com Gift Card</li>
-                                    <li>Delivered digitally</li>
-                                    <li>No expiration</li>
-                              </ul>
-                              <div class="rating">
-                                    <span class="stars">★★★★★</span>
-                                    <span class="rating-score">4.5</span>
-                              </div>
-                              <button class="reserve-btn" onclick="openReservation('amazon-card')">Reserve Free Tickets</button>
-                        </div>
-
-                        <div class="package-card">
-                              <div class="package-icon">🍽️</div>
-                              <h3 class="package-title">Lunch for Two</h3>
-                              <p class="package-subtitle">Pampas Steakhouse</p>
-                              <ul class="package-features">
-                                    <li>In Planet Hollywood</li>
-                                    <li>Tableside Buffet</li>
-                                    <li>Premium dining experience</li>
-                              </ul>
-                              <div class="rating">
-                                    <span class="stars">★★★★★</span>
-                                    <span class="rating-score">4.5</span>
-                              </div>
-                              <button class="reserve-btn" onclick="openReservation('lunch')">Reserve Free Tickets</button>
-                        </div>
-
-                        <div class="package-card">
-                              <div class="package-icon">🎭</div>
-                              <h3 class="package-title">LA Comedy Club</h3>
-                              <p class="package-subtitle">The STRAT</p>
-                              <ul class="package-features">
-                                    <li>Admission for Two</li>
-                                    <li>Nightly Shows</li>
-                                    <li>Premium entertainment</li>
-                              </ul>
-                              <div class="rating">
-                                    <span class="stars">★★★★★</span>
-                                    <span class="rating-score">4.5</span>
-                              </div>
-                              <button class="reserve-btn" onclick="openReservation('comedy')">Reserve Free Tickets</button>
-                        </div>
-                  </div>
-
-                  <div style="text-align: center;">
-                        <button class="cta-btn" onclick="openReservation('complete-package')">Reserve a Package</button>
-                        <p style="margin-top: 32px; font-size: 18px; font-weight: 600; color: var(--text-primary);">
-                              We're serious! Only $19.95 for a limited time only
-                        </p>
-                  </div>
-            </div>
-      </main>
-
-      <section class="free-packages">
-            <div class="container">
-                  <div class="free-packages-content">
-                        <h2 class="section-title" style="color: white;">Already Booked a Hotel? Check Out Our Free Packages</h2>
-                        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 64px; opacity: 0.9;">
-                              Reserve a 100% free package retailing at over $300. One offer valid per household.
-                        </p>
-
-                        <div class="free-packages-grid">
-                              <div class="free-package-card">
-                                    <div class="free-package-image">🚗</div>
-                                    <h3>Free 2-Day Tesla</h3>
-                                    <p>48-Hour Tesla Rental</p>
-                                    <button class="reserve-btn" onclick="openReservation('tesla')">Book A Free Tesla</button>
-                              </div>
-
-                              <div class="free-package-card">
-                                    <div class="free-package-image">🎨</div>
-                                    <h3>Blue Man VIP Night</h3>
-                                    <p>Attractions + Dinner For Two</p>
-                                    <button class="reserve-btn" onclick="openReservation('blueman')">Reserve Blue Man</button>
-                              </div>
-
-                              <div class="free-package-card">
-                                    <div class="free-package-image">🎡</div>
-                                    <h3>High Roller Package</h3>
-                                    <p>Attractions + Dinner For Two</p>
-                                    <button class="reserve-btn" onclick="openReservation('highroller')">Book Free Passes</button>
-                              </div>
-
-                              <div class="free-package-card">
-                                    <div class="free-package-image">🌐</div>
-                                    <h3>Free Sphere Passes</h3>
-                                    <p>Admission For Two</p>
-                                    <button class="reserve-btn" onclick="openReservation('sphere')">Book Free Passes</button>
-                              </div>
-                        </div>
-                  </div>
-            </div>
-      </section>
-
-      <section class="how-it-works">
-            <div class="container">
-                  <h2 class="section-title">How it Works</h2>
-                  <p style="text-align: center; font-size: 1.2rem; margin-bottom: 32px; color: var(--text-secondary);">
-                        Choose Your Dream Package to Kickstart Your Vegas Journey!
-                  </p>
-
-                  <div class="steps-grid">
-                        <div class="step-card">
-                              <div class="step-number">1</div>
-                              <h3 class="step-title">Select Your Package</h3>
-                              <p class="step-description">
-                                    Select from our exclusive packages, offering a variety of premium attractions and dining experiences - all at zero cost to you, with no hidden fees or commitments. It's all free!
-                              </p>
-                        </div>
-
-                        <div class="step-card">
-                              <div class="step-number">2</div>
-                              <h3 class="step-title">Confirm Your Contact Info</h3>
-                              <p class="step-description">
-                                    Complete our quick sign up form with just your name and phone number. Your details are secure and used solely to confirm your hotel reservation. No payment required!
-                              </p>
-                        </div>
-
-                        <div class="step-card">
-                              <div class="step-number">3</div>
-                              <h3 class="step-title">Attend Resort Tour & Get Rewards</h3>
-                              <p class="step-description">
-                                    Attend a tour at one of our featured Las Vegas resorts and receive your selected gift package. There's no obligation to buy, sign, or join anything. Just show up to claim your gift package - no strings attached!
-                              </p>
-                        </div>
-                  </div>
-
-                  <div class="benefits-grid">
-                        <div class="benefit-item">
-                              <div class="benefit-icon">✓</div>
-                              <p><strong>No hidden fees</strong></p>
-                        </div>
-                        <div class="benefit-item">
-                              <div class="benefit-icon">★</div>
-                              <p><strong>Exceptional Guest Service</strong></p>
-                        </div>
-                        <div class="benefit-item">
-                              <div class="benefit-icon">♦</div>
-                              <p><strong>Premium Partners</strong></p>
-                        </div>
-                        <div class="benefit-item">
-                              <div class="benefit-icon">⚡</div>
-                              <p><strong>Effortless Booking</strong></p>
-                        </div>
-                  </div>
-            </div>
-      </section>
-
-      <section class="faq-section">
-            <div class="container">
-                  <h2 class="section-title" style="color: white;">Frequently Asked Questions</h2>
-
-                  <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
-                              Is this stuff really free? What's the catch?
-                        </button>
-                        <div class="faq-answer">
-                              <p>Yes, all packages have no hidden fees. All we ask in return is for you to attend a presentation at a partner Vegas resort, with no obligations to purchase anything to receive your gifts.</p>
-                        </div>
-                  </div>
-
-                  <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
-                              What do I need to do to get started?
-                        </button>
-                        <div class="faq-answer">
-                              <p>To get started, simply select a package from our offerings and complete the quick sign-up form. No payment info is needed - just your name, email and phone number. We'll only use it for reservation purposes.</p>
-                        </div>
-                  </div>
-
-                  <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
-                              What is the guided tour? What can I expect?
-                        </button>
-                        <div class="faq-answer">
-                              <p>The guided tour is an informative visit to one of our partner resorts. You'll learn about the resort's amenities and offerings to save money on your next hotel stay. There's no obligation to buy, sign, or join anything.</p>
-                        </div>
-                  </div>
-
-                  <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
-                              Can I choose the date and time of my tour?
-                        </button>
-                        <div class="faq-answer">
-                              <p>Yes, we offer flexible scheduling options and will help find the best day and time availability for you.</p>
-                        </div>
-                  </div>
-
-                  <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
-                              What if I need more show tickets or vouchers?
-                        </button>
-                        <div class="faq-answer">
-                              <p>Have more guests? Our friendly concierge is here to help. For participating you'll receive exclusive access to purchase our show tickets, dinner vouchers, and more at our wholesale prices.</p>
-                        </div>
-                  </div>
-
-                  <div class="faq-item">
-                        <button class="faq-question" onclick="toggleFaq(this)">
-                              What if I have more questions?
-                        </button>
-                        <div class="faq-answer">
-                              <p>Our local team of Vacation Buddies are based here in Las Vegas and are available to assist you by phone seven days per week, from 9am-6pm PST.</p>
-                        </div>
-                  </div>
-            </div>
-      </section>
-
-      <footer class="footer">
-            <div class="container">
-                  <div class="footer-content">
-                        <div class="footer-section">
-                              <h3>Contact Us</h3>
-                              <a href="tel:8888128339">(888) 812-8339</a>
-                              <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 12px;">Call Us! (9am - 6pm PST, 7 Days)</p>
-                              <a href="mailto:support@thevacationbuddies.com">support@thevacationbuddies.com</a>
-                        </div>
-                        <div class="footer-section">
-                              <h3>Quick Links</h3>
-                              <a href="#" onclick="scrollToPackages()">Packages</a>
-                              <a href="#" onclick="scrollToSection('.how-it-works')">How It Works</a>
-                              <a href="#" onclick="scrollToSection('.faq-section')">FAQ</a>
-                        </div>
-                        <div class="footer-section">
-                              <h3>Legal</h3>
-                              <a href="#">Terms & Conditions</a>
-                              <a href="#">Data Use Policy</a>
-                              <p style="font-size: 12px; margin-top: 24px; color: rgba(255, 255, 255, 0.6);">
-                                    Promotions Offered to Advertise Timeshare
-                              </p>
-                        </div>
-                  </div>
-                  <div class="footer-bottom">
-                        <p>&copy; 2025 The Vacation Buddies</p>
-                        <p>We're the best buddies your vacation could have.</p>
-                        <p style="font-size: 12px; margin-top: 16px;">This Site Was Baked With Love by Snackable Technology</p>
-                  </div>
-            </div>
-      </footer>
-
-      <!-- Reservation Modal -->
-      <div id="reservationModal" class="modal" style="display: none;">
-            <div class="modal-content">
-                  <button class="close" onclick="closeModal()">×</button>
-                  <h2>Reserve Your Package</h2>
-                  <form id="reservationForm">
-                        <div class="form-group">
-                              <label for="name">Full Name *</label>
-                              <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                              <label for="email">Email Address *</label>
-                              <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                              <label for="phone">Phone Number *</label>
-                              <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                              <label for="package">Selected Package</label>
-                              <input type="text" id="package" name="package" readonly>
-                        </div>
-                        <div class="form-group">
-                              <label style="display: flex; align-items: center; gap: 12px;">
-                                    <input type="checkbox" required style="width: auto;"> 
-                                    I agree that this is a timeshare presentation and understand the terms
-                              </label>
-                        </div>
-                        <button type="submit" class="submit-btn">Reserve My Package</button>
-                  </form>
-            </div>
-      </div>
-
-      <script>
-            // Smooth scrolling functions
-            function scrollToPackages() {
-                  document.querySelector('.packages-section').scrollIntoView({
-                        behavior: 'smooth'
-                  });
-            }
-
-            function scrollToMainDeal() {
-                  document.querySelector('.main-deal').scrollIntoView({
-                        behavior: 'smooth'
-                  });
-            }
-
-            function scrollToSection(selector) {
-                  document.querySelector(selector).scrollIntoView({
-                        behavior: 'smooth'
-                  });
-            }
-
-            // FAQ toggle functionality
-            function toggleFaq(button) {
-                  const answer = button.nextElementSibling;
-                  const allAnswers = document.querySelectorAll('.faq-answer');
-                  const allQuestions = document.querySelectorAll('.faq-question');
-
-                  // Close all other FAQs
-                  allAnswers.forEach(ans => {
-                        if (ans !== answer) {
-                              ans.classList.remove('active');
-                        }
-                  });
-                  
-                  allQuestions.forEach(q => {
-                        if (q !== button) {
-                              q.classList.remove('active');
-                        }
-                  });
-
-                  // Toggle current FAQ
-                  answer.classList.toggle('active');
-                  button.classList.toggle('active');
-            }
-
-            // Modal functionality
-            const packages = {
-                  'vegas-stay': '2-Night Vegas Stay',
-                  'amazon-card': '$40 Amazon Gift Card',
-                  'lunch': 'Pampas Steakhouse Lunch for Two',
-                  'comedy': 'LA Comedy Club Admission for Two',
-                  'complete-package': 'Complete 2-Night Vegas Getaway Package',
-                  'tesla': 'Free 2-Day Tesla Rental',
-                  'blueman': 'Blue Man VIP Night',
-                  'highroller': 'High Roller Package',
-                  'sphere': 'Free Sphere Passes'
-            };
-
-            function openReservation(packageType) {
-                  const modal = document.getElementById('reservationModal');
-                  const packageInput = document.getElementById('package');
-                  packageInput.value = packages[packageType] || 'Selected Package';
-                  modal.style.display = 'flex';
-                  document.body.style.overflow = 'hidden';
-            }
-
-            function closeModal() {
-                  const modal = document.getElementById('reservationModal');
-                  modal.style.display = 'none';
-                  document.body.style.overflow = 'auto';
-            }
-
-            // Close modal when clicking outside
-            window.onclick = function(event) {
-                  const modal = document.getElementById('reservationModal');
-                  if (event.target === modal) {
-                        closeModal();
-                  }
-            }
-
-            // Form submission
-            document.getElementById('reservationForm').addEventListener('submit', function(e) {
-                  e.preventDefault();
-                  
-                  // Show success message
-                  alert('Thank you for your reservation! Our team will contact you within 24 hours to confirm your package and schedule your resort tour.');
-                  closeModal();
-                  
-                  // Reset form
-                  this.reset();
-            });
-
-            // Intersection Observer for scroll animations
-            const observerOptions = {
-                  threshold: 0.1,
-                  rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                  entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                              entry.target.style.opacity = '1';
-                              entry.target.style.transform = 'translateY(0)';
-                        }
-                  });
-            }, observerOptions);
-
-            // Initialize scroll animations
-            document.addEventListener('DOMContentLoaded', function() {
-                  const animatableElements = document.querySelectorAll('.package-card, .step-card, .free-package-card');
-                  animatableElements.forEach(el => {
-                        el.style.opacity = '0';
-                        el.style.transform = 'translateY(30px)';
-                        el.style.transition = 'all 0.6s ease-out';
-                        observer.observe(el);
-                  });
-            });
-
-            // Enhanced parallax effect
-            let ticking = false;
             
-            function updateParallax() {
-                  const scrolled = window.pageYOffset;
-                  const rate = scrolled * -0.3;
-                  const header = document.querySelector('.header');
-                  if (header) {
-                        header.style.transform = `translateY(${rate}px)`;
-                  }
-                  ticking = false;
-            }
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#packages" class="nav-link">Packages</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <button class="premium-btn secondary">
+                    <i class="fas fa-phone mr-2"></i>
+                    Call Now
+                </button>
+                <button class="premium-btn primary">
+                    <i class="fas fa-calendar mr-2"></i>
+                    Book Now
+                </button>
+                
+                <button id="mobile-menu-button" class="lg:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <div id="mobile-menu" class="hidden lg:hidden mobile-menu">
+            <div class="mobile-menu-content">
+                <a href="#home" class="mobile-nav-link">Home</a>
+                <a href="#packages" class="mobile-nav-link">Packages</a>
+                <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
+                <a href="#faq" class="mobile-nav-link">FAQ</a>
+                <div class="mobile-buttons">
+                    <button class="premium-btn secondary w-full mb-3">
+                        <i class="fas fa-phone mr-2"></i>
+                        Call Now
+                    </button>
+                    <button class="premium-btn primary w-full">
+                        <i class="fas fa-calendar mr-2"></i>
+                        Book Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
 
-            function requestTick() {
-                  if (!ticking) {
-                        requestAnimationFrame(updateParallax);
-                        ticking = true;
-                  }
-            }
+    <!-- Premium Hero Section -->
+    <section id="home" class="premium-hero relative min-h-screen flex items-center justify-center text-white overflow-hidden">
+        <div class="hero-background">
+            <video autoplay muted loop class="hero-video">
+                <source src="assets/Home -The Vacation Buddies.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="floating-elements">
+            <div class="floating-card card-1">
+                <i class="fas fa-star text-yellow-400"></i>
+            </div>
+            <div class="floating-card card-2">
+                <i class="fas fa-gem text-blue-400"></i>
+            </div>
+            <div class="floating-card card-3">
+                <i class="fas fa-crown text-purple-400"></i>
+            </div>
+        </div>
+        
+        <div class="hero-content relative z-10 text-center px-4 max-w-6xl mx-auto">
+            <!-- Trust Badge -->
+            <div class="trust-badge mb-8">
+                <div class="flex justify-center items-center space-x-2">
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star text-xl"></i>
+                        <i class="fas fa-star text-xl"></i>
+                        <i class="fas fa-star text-xl"></i>
+                        <i class="fas fa-star text-xl"></i>
+                        <i class="fas fa-star text-xl"></i>
+                    </div>
+                    <span class="text-lg font-medium">Trusted by over 20,000 travelers since 2012</span>
+                </div>
+            </div>
+            
+            <!-- Main Headline -->
+            <h1 class="hero-title mb-6">
+                <span class="title-line">Unlock free access to</span>
+                <span class="title-line gradient-text">Las Vegas' best show tickets</span>
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="hero-subtitle mb-8 text-xl opacity-90">
+                Reserve a free package instantly. No purchase or payment info required.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="hero-buttons flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="premium-cta primary">
+                    <i class="fas fa-gift mr-2"></i>
+                    Reserve Your Free Package Now
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+                <button class="premium-cta secondary">
+                    <i class="fas fa-bed mr-2"></i>
+                    Reserve 2 Hotel Nights for $20
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+            
+            <!-- Features List -->
+            <div class="hero-features mt-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt text-3xl text-green-400 mb-2"></i>
+                        <p class="text-sm">100% Free</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-clock text-3xl text-blue-400 mb-2"></i>
+                        <p class="text-sm">Instant Booking</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-star text-3xl text-yellow-400 mb-2"></i>
+                        <p class="text-sm">Premium Quality</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
 
-            window.addEventListener('scroll', requestTick);
-      </script>
+    <!-- Premium Packages Section -->
+    <section id="packages" class="package-section">
+        <div class="package-container">
+            <div class="section-title">
+                <h2>Get Two Nights in a Vegas Resort for <span class="text-gradient">Only $19.95</span></h2>
+                <p>Yes, it's actually only $19.95 total. <a href="#" class="text-gradient font-semibold">Learn how</a>.</p>
+                <p class="text-gradient font-semibold">(+ Get a free $40 Amazon gift card to use asap!)</p>
+            </div>
+
+            <div class="package-grid">
+                <!-- Package Card 1 -->
+                <div class="package-card animate-fade-in">
+                    <div class="package-image">
+                        <video autoplay muted loop class="w-full h-full object-cover">
+                            <source src="assets/file.mp4" type="video/mp4">
+                        </video>
+                        <div class="package-overlay">
+                            <button class="premium-cta primary">
+                                <i class="fas fa-play mr-2"></i>
+                                Watch Preview
+                            </button>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">2-Night Vegas Stay</h3>
+                        <p class="package-subtitle">📍 Vegas Strip Adjacent</p>
+                        
+                        <ul class="package-features">
+                            <li><i class="fas fa-users"></i> 2 Nights for 4 Guests</li>
+                            <li><i class="fas fa-bed"></i> Resort Nights</li>
+                            <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                        </ul>
+                        
+                        <div class="package-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.5 Rating</span>
+                        </div>
+                        
+                        <div class="package-buttons">
+                            <button class="package-btn secondary">More Info</button>
+                            <button class="package-btn primary">Reserve Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Card 2 -->
+                <div class="package-card animate-fade-in">
+                    <div class="package-image">
+                        <video autoplay muted loop class="w-full h-full object-cover">
+                            <source src="assets/file_2.mp4" type="video/mp4">
+                        </video>
+                        <div class="package-overlay">
+                            <button class="premium-cta primary">
+                                <i class="fas fa-play mr-2"></i>
+                                Watch Preview
+                            </button>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">LA Comedy Club</h3>
+                        <p class="package-subtitle">📍 The STRAT</p>
+                        
+                        <ul class="package-features">
+                            <li><i class="fas fa-ticket-alt"></i> Admission for Two</li>
+                            <li><i class="fas fa-moon"></i> Nightly Shows</li>
+                            <li><i class="fas fa-utensils"></i> Dinner Included</li>
+                            <li><i class="fas fa-cocktail"></i> Welcome Drinks</li>
+                        </ul>
+                        
+                        <div class="package-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.5 Rating</span>
+                        </div>
+                        
+                        <div class="package-buttons">
+                            <button class="package-btn secondary">More Info</button>
+                            <button class="package-btn primary">Reserve Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Card 3 -->
+                <div class="package-card animate-fade-in">
+                    <div class="package-image">
+                        <video autoplay muted loop class="w-full h-full object-cover">
+                            <source src="assets/file_3.mp4" type="video/mp4">
+                        </video>
+                        <div class="package-overlay">
+                            <button class="premium-cta primary">
+                                <i class="fas fa-play mr-2"></i>
+                                Watch Preview
+                            </button>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">$40 Amazon Card</h3>
+                        <p class="package-subtitle">📍 Use Now or Later</p>
+                        
+                        <ul class="package-features">
+                            <li><i class="fas fa-gift"></i> Amazon.com Gift Card</li>
+                            <li><i class="fas fa-envelope"></i> Delivered digitally</li>
+                            <li><i class="fas fa-clock"></i> Instant delivery</li>
+                            <li><i class="fas fa-shopping-cart"></i> Use anywhere</li>
+                        </ul>
+                        
+                        <div class="package-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.5 Rating</span>
+                        </div>
+                        
+                        <div class="package-buttons">
+                            <button class="package-btn secondary">More Info</button>
+                            <button class="package-btn primary">Reserve Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Card 4 -->
+                <div class="package-card animate-fade-in">
+                    <div class="package-image">
+                        <video autoplay muted loop class="w-full h-full object-cover">
+                            <source src="assets/Home - The Vacation Buddies_4.mp4" type="video/mp4">
+                        </video>
+                        <div class="package-overlay">
+                            <button class="premium-cta primary">
+                                <i class="fas fa-play mr-2"></i>
+                                Watch Preview
+                            </button>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">Lunch for Two</h3>
+                        <p class="package-subtitle">📍 Pampas Steakhouse</p>
+                        
+                        <ul class="package-features">
+                            <li><i class="fas fa-utensils"></i> In Planet Hollywood</li>
+                            <li><i class="fas fa-drumstick-bite"></i> Tableside Buffet</li>
+                            <li><i class="fas fa-wine-glass"></i> Premium Drinks</li>
+                            <li><i class="fas fa-star"></i> Fine Dining Experience</li>
+                        </ul>
+                        
+                        <div class="package-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.5 Rating</span>
+                        </div>
+                        
+                        <div class="package-buttons">
+                            <button class="package-btn secondary">More Info</button>
+                            <button class="package-btn primary">Reserve Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium CTA Section -->
+    <section class="cta-section">
+        <div class="container mx-auto px-6">
+            <div class="cta-content">
+                <h2 class="cta-title">Yes, It's Only <span class="text-gradient">$19.95</span></h2>
+                <p class="cta-subtitle">Yes, You Get A <span class="text-gradient">$40 Amazon Gift Card</span></p>
+                <p class="text-white text-lg mb-8">Travel any time within the next 6 months. (While supplies last.)</p>
+                
+                <div class="cta-buttons">
+                    <button class="cta-btn primary">
+                        <i class="fas fa-gift mr-2"></i>
+                        Reserve Your Package Now
+                    </button>
+                    <button class="cta-btn secondary">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        Learn How It Works
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Packages Section -->
+    <section class="package-section">
+        <div class="package-container">
+            <div class="section-title">
+                <h2>Already Booked a Hotel? Check Out Our <span class="text-gradient">Free Packages</span></h2>
+                <p>Reserve a 100% free package retailing at over $300.</p>
+                <p class="text-gradient font-semibold">One offer valid per household.</p>
+            </div>
+
+            <div class="package-grid">
+                <!-- Free Package Card 1 -->
+                <div class="package-card animate-fade-in">
+                    <div class="package-image">
+                        <img src="assets/free-spere.jpg" alt="Sphere Passes" class="w-full h-full object-cover">
+                        <div class="package-overlay">
+                            <button class="premium-cta primary">
+                                <i class="fas fa-eye mr-2"></i>
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">Free Sphere Passes</h3>
+                        <p class="package-subtitle">📍 Admission For Two</p>
+                        
+                        <ul class="package-features">
+                            <li><i class="fas fa-ticket-alt"></i> 2 Free Passes</li>
+                            <li><i class="fas fa-eye"></i> Immersive Experience</li>
+                            <li><i class="fas fa-clock"></i> Flexible Timing</li>
+                            <li><i class="fas fa-star"></i> Premium Attraction</li>
+                        </ul>
+                        
+                        <div class="package-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.5 Rating</span>
+                        </div>
+                        
+                        <div class="package-buttons">
+                            <button class="package-btn secondary">Read More</button>
+                            <button class="package-btn primary">Book Free Passes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Free Package Card 2 -->
+                <div class="package-card animate-fade-in">
+                    <div class="package-image">
+                        <img src="assets/tesla.png" alt="Tesla Rental" class="w-full h-full object-cover">
+                        <div class="package-overlay">
+                            <button class="premium-cta primary">
+                                <i class="fas fa-eye mr-2"></i>
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">Free 2-Day Tesla</h3>
+                        <p class="package-subtitle">📍 48-Hour Tesla Rental</p>
+                        
+                        <ul class="package-features">
+                            <li><i class="fas fa-car"></i> 2-Day Rental</li>
+                            <li><i class="fas fa-bolt"></i> Electric Vehicle</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Pickup Available</li>
+                            <li><i class="fas fa-star"></i> Luxury Experience</li>
+                        </ul>
+                        
+                        <div class="package-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.5 Rating</span>
+                        </div>
+                        
+                        <div class="package-buttons">
+                            <button class="package-btn secondary">Read More</button>
+                            <button class="package-btn primary">Book A Free Tesla</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Free Package Card 3 -->
+                <div class="package-card animate-fade-in">
+                    <div class="package-image">
+                        <img src="assets/vip-night.png" alt="Blue Man Group" class="w-full h-full object-cover">
+                        <div class="package-overlay">
+                            <button class="premium-cta primary">
+                                <i class="fas fa-eye mr-2"></i>
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">Blue Man VIP Night</h3>
+                        <p class="package-subtitle">📍 Attractions + Dinner For Two</p>
+                        
+                        <ul class="package-features">
+                            <li><i class="fas fa-theater-masks"></i> Blue Man Group Show</li>
+                            <li><i class="fas fa-utensils"></i> Dinner for Two</li>
+                            <li><i class="fas fa-star"></i> VIP Experience</li>
+                            <li><i class="fas fa-gem"></i> Premium Seating</li>
+                        </ul>
+                        
+                        <div class="package-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.5 Rating</span>
+                        </div>
+                        
+                        <div class="package-buttons">
+                            <button class="package-btn secondary">Read More</button>
+                            <button class="package-btn primary">Reserve Blue Man</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Free Package Card 4 -->
+                <div class="package-card animate-fade-in">
+                    <div class="package-image">
+                        <img src="assets/roller.png" alt="High Roller" class="w-full h-full object-cover">
+                        <div class="package-overlay">
+                            <button class="premium-cta primary">
+                                <i class="fas fa-eye mr-2"></i>
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">High Roller Package</h3>
+                        <p class="package-subtitle">📍 Attractions + Dinner For Two</p>
+                        
+                        <ul class="package-features">
+                            <li><i class="fas fa-mountain"></i> High Roller Ride</li>
+                            <li><i class="fas fa-utensils"></i> Dinner for Two</li>
+                            <li><i class="fas fa-eye"></i> City Views</li>
+                            <li><i class="fas fa-star"></i> Premium Experience</li>
+                        </ul>
+                        
+                        <div class="package-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.5 Rating</span>
+                        </div>
+                        
+                        <div class="package-buttons">
+                            <button class="package-btn secondary">Read More</button>
+                            <button class="package-btn primary">Book Free Passes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="package-section">
+        <div class="package-container">
+            <div class="section-title">
+                <h2>How It <span class="text-gradient">Works</span></h2>
+                <p>Choose Your Dream Package to Kickstart Your Vegas Journey!</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                <!-- Step 1 -->
+                <div class="text-center animate-fade-in">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Choose Your Package</h3>
+                        <p class="text-gray-600 mb-6">Select from our exclusive packages, offering a variety of premium attractions and dining experiences - all at zero cost to you.</p>
+                        <div class="step-image">
+                            <img src="assets/hi-buddy.gif" alt="Choose Package" class="rounded-lg w-full">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center animate-fade-in">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Confirm Your Info</h3>
+                        <p class="text-gray-600 mb-6">Complete our quick sign up form with just your name and phone number. Your details are secure and used solely to confirm your hotel reservation.</p>
+                        <div class="step-image">
+                            <img src="assets/choose-package.gif" alt="Confirm Info" class="rounded-lg w-full">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center animate-fade-in">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Attend Tour & Get Rewards</h3>
+                        <p class="text-gray-600 mb-6">Attend a tour at one of our featured Las Vegas resorts and receive your selected gift package. There's no obligation to buy, sign, or join anything.</p>
+                        <div class="step-image">
+                            <img src="assets/immegration.gif" alt="Attend Tour" class="rounded-lg w-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl">
+                    <h3 class="text-3xl font-bold mb-4">It's really that simple!</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <span>No hidden fees</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <span>Exceptional Guest Service</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <span>Premium Partners</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <span>Effortless Booking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="package-section">
+        <div class="package-container">
+            <div class="section-title">
+                <h2>Frequently Asked <span class="text-gradient">Questions</span></h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-6">
+                    <div class="faq-item">
+                        <h3 class="faq-question">Is this stuff really free? What's the catch?</h3>
+                        <p class="faq-answer">Yes, all packages have no hidden fees. All we ask in return is for you to attend a presentation at a partner Vegas resort, with no obligations to purchase anything to receive your gifts.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">What do I need to do to get started?</h3>
+                        <p class="faq-answer">To get started, simply select a package from our offerings and complete the quick sign-up form. No payment info is needed - just your name, email and phone number. We'll only use it for reservation purposes.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">What is the guided tour? What can I expect?</h3>
+                        <p class="faq-answer">The guided tour is an informative visit to one of our partner resorts. You'll learn about the resort's amenities and offerings to save money on your next hotel stay. There's no obligation to buy, sign, or join anything.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">Can I choose the date and time of my tour?</h3>
+                        <p class="faq-answer">Yes, we offer flexible scheduling options and will help find the best day and time availability for you.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">What if I need more show tickets or vouchers?</h3>
+                        <p class="faq-answer">Have more guests? Our friendly concierge is here to help. For participating you'll receive exclusive access to purchase our show tickets, dinner vouchers, and more at our wholesale prices.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3 class="faq-question">What if I have more questions?</h3>
+                        <p class="faq-answer">Our local team of Vacation Buddies are based here in Las Vegas and are available to assist you by phone seven days per week, from 9am-6pm PST.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="logo-gradient">
+                            <i class="fas fa-gem text-2xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold">Vacation Buddies</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">We're the best buddies your vacation could have.</p>
+                    <div class="space-y-3">
+                        <a href="mailto:support@thevacationbuddies.com" class="flex items-center text-gray-300 hover:text-white transition-colors">
+                            <i class="fas fa-envelope mr-3"></i>
+                            support@thevacationbuddies.com
+                        </a>
+                        <a href="tel:8888128339" class="flex items-center text-gray-300 hover:text-white transition-colors">
+                            <i class="fas fa-phone mr-3"></i>
+                            (888) 812-8339
+                        </a>
+                        <p class="text-sm text-gray-400">Call Us! (9am - 6pm PST, 7 Days)</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                            <li><a href="#packages" class="text-gray-300 hover:text-white transition-colors">Packages</a></li>
+                            <li><a href="#how-it-works" class="text-gray-300 hover:text-white transition-colors">How It Works</a></li>
+                            <li><a href="#faq" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Terms & Conditions</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Data Use Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-6 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 The Vacation Buddies</p>
+                <p>Promotions Offered to Advertise Timeshare</p>
+                <p>This Site Was Baked With Love by Snackable Technology</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Screen -->
+    <div id="loading" class="loading">
+        <div class="loader"></div>
+    </div>
+
+    <script>
+        // Loading Screen
+        window.addEventListener('load', function() {
+            const loading = document.getElementById('loading');
+            loading.classList.add('hidden');
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('show');
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.premium-header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isOpen = answer.style.display === 'block';
+                
+                // Close all other answers
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.style.display = 'none';
+                });
+                
+                // Toggle current answer
+                answer.style.display = isOpen ? 'none' : 'block';
+            });
+        });
+
+        // Package Card Hover Effects
+        document.querySelectorAll('.package-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.animate-fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
 </body>
-
 </html>
