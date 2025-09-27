@@ -4,820 +4,1347 @@
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Enhanced About Us Section - Always Visible</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-            integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link rel="stylesheet" href="./css/style.css">
+      <title>The Vacation Buddies - Premium Vegas Packages</title>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <style>
+            * {
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+            }
+
+            :root {
+                  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+                  --secondary-gradient: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 50%, #6366f1 100%);
+                  --accent-gradient: linear-gradient(135deg, #f59e0b 0%, #f97316 50%, #ef4444 100%);
+                  --success-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+                  --dark-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+                  --glass-bg: rgba(255, 255, 255, 0.1);
+                  --glass-border: rgba(255, 255, 255, 0.2);
+                  --text-primary: #0f172a;
+                  --text-secondary: #64748b;
+                  --text-light: rgba(255, 255, 255, 0.9);
+            }
+
+            body {
+                  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+                  line-height: 1.6;
+                  color: var(--text-primary);
+                  overflow-x: hidden;
+                  font-weight: 400;
+            }
+
+            .container {
+                  max-width: 1200px;
+                  margin: 0 auto;
+                  padding: 0 24px;
+            }
+
+            /* Premium Header */
+            .header {
+                  background: var(--primary-gradient);
+                  position: relative;
+                  overflow: hidden;
+                  min-height: 100vh;
+                  display: flex;
+                  align-items: center;
+            }
+
+            .header::before {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  background: 
+                        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+                  animation: floating 20s ease-in-out infinite;
+            }
+
+            @keyframes floating {
+                  0%, 100% { transform: translateY(0px) rotate(0deg); }
+                  50% { transform: translateY(-20px) rotate(180deg); }
+            }
+
+            .hero-content {
+                  position: relative;
+                  z-index: 2;
+                  text-align: center;
+                  color: var(--text-light);
+            }
+
+            .trust-badge {
+                  display: inline-block;
+                  background: var(--glass-bg);
+                  backdrop-filter: blur(20px);
+                  border: 1px solid var(--glass-border);
+                  padding: 8px 24px;
+                  border-radius: 50px;
+                  font-size: 14px;
+                  font-weight: 500;
+                  margin-bottom: 32px;
+                  animation: fadeInUp 0.8s ease-out 0.2s both;
+            }
+
+            .hero-title {
+                  font-size: clamp(2.5rem, 5vw, 4rem);
+                  font-weight: 700;
+                  line-height: 1.1;
+                  margin-bottom: 24px;
+                  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  background-clip: text;
+                  animation: fadeInUp 0.8s ease-out 0.4s both;
+            }
+
+            .hero-subtitle {
+                  font-size: 1.25rem;
+                  font-weight: 400;
+                  margin-bottom: 48px;
+                  opacity: 0.9;
+                  max-width: 600px;
+                  margin-left: auto;
+                  margin-right: auto;
+                  animation: fadeInUp 0.8s ease-out 0.6s both;
+            }
+
+            .cta-buttons {
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 20px;
+                  justify-content: center;
+                  animation: fadeInUp 0.8s ease-out 0.8s both;
+            }
+
+            .cta-btn {
+                  background: var(--accent-gradient);
+                  color: white;
+                  padding: 16px 32px;
+                  border: none;
+                  border-radius: 50px;
+                  font-size: 16px;
+                  font-weight: 600;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  text-decoration: none;
+                  display: inline-block;
+                  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+                  position: relative;
+                  overflow: hidden;
+            }
+
+            .cta-btn::before {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  left: -100%;
+                  width: 100%;
+                  height: 100%;
+                  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                  transition: left 0.5s ease;
+            }
+
+            .cta-btn:hover::before {
+                  left: 100%;
+            }
+
+            .cta-btn:hover {
+                  transform: translateY(-3px);
+                  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+            }
+
+            .secondary-btn {
+                  background: var(--glass-bg);
+                  border: 2px solid var(--glass-border);
+                  color: white;
+                  backdrop-filter: blur(20px);
+            }
+
+            .secondary-btn:hover {
+                  background: rgba(255, 255, 255, 0.2);
+            }
+
+            /* Premium Deal Section */
+            .main-deal {
+                  background: var(--dark-gradient);
+                  color: white;
+                  padding: 120px 0;
+                  text-align: center;
+                  position: relative;
+                  overflow: hidden;
+            }
+
+            .main-deal::before {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  background: 
+                        radial-gradient(circle at 30% 20%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%);
+            }
+
+            .deal-content {
+                  position: relative;
+                  z-index: 2;
+            }
+
+            .deal-title {
+                  font-size: clamp(2rem, 4vw, 3.5rem);
+                  font-weight: 700;
+                  margin-bottom: 24px;
+                  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  background-clip: text;
+            }
+
+            .deal-price {
+                  font-size: clamp(3rem, 6vw, 5rem);
+                  font-weight: 800;
+                  background: var(--accent-gradient);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  background-clip: text;
+                  margin: 32px 0;
+                  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            }
+
+            .deal-subtitle {
+                  font-size: 1.2rem;
+                  margin-bottom: 16px;
+                  opacity: 0.9;
+            }
+
+            /* Premium Package Grid */
+            .packages-section {
+                  padding: 120px 0;
+                  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            }
+
+            .section-title {
+                  font-size: clamp(2rem, 4vw, 3rem);
+                  font-weight: 700;
+                  text-align: center;
+                  margin-bottom: 64px;
+                  background: var(--primary-gradient);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  background-clip: text;
+            }
+
+            .packages-grid {
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                  gap: 32px;
+                  margin-bottom: 80px;
+            }
+
+            .package-card {
+                  background: rgba(255, 255, 255, 0.8);
+                  backdrop-filter: blur(20px);
+                  border: 1px solid rgba(255, 255, 255, 0.3);
+                  border-radius: 24px;
+                  padding: 40px;
+                  transition: all 0.4s ease;
+                  position: relative;
+                  overflow: hidden;
+                  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            }
+
+            .package-card::before {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  height: 4px;
+                  background: var(--primary-gradient);
+            }
+
+            .package-card:hover {
+                  transform: translateY(-12px) scale(1.02);
+                  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+                  background: rgba(255, 255, 255, 0.95);
+            }
+
+            .package-icon {
+                  width: 80px;
+                  height: 80px;
+                  background: var(--primary-gradient);
+                  border-radius: 20px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto 24px;
+                  color: white;
+                  font-size: 32px;
+                  transition: all 0.3s ease;
+            }
+
+            .package-card:hover .package-icon {
+                  transform: rotate(10deg) scale(1.1);
+            }
+
+            .package-title {
+                  font-size: 1.5rem;
+                  font-weight: 600;
+                  margin-bottom: 8px;
+                  text-align: center;
+                  color: var(--text-primary);
+            }
+
+            .package-subtitle {
+                  color: var(--text-secondary);
+                  text-align: center;
+                  margin-bottom: 24px;
+                  font-weight: 500;
+            }
+
+            .package-features {
+                  list-style: none;
+                  margin-bottom: 32px;
+            }
+
+            .package-features li {
+                  padding: 12px 0;
+                  color: var(--text-primary);
+                  position: relative;
+                  padding-left: 32px;
+                  font-weight: 500;
+            }
+
+            .package-features li::before {
+                  content: '';
+                  position: absolute;
+                  left: 0;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  width: 20px;
+                  height: 20px;
+                  background: var(--success-gradient);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+            }
+
+            .package-features li::after {
+                  content: '✓';
+                  position: absolute;
+                  left: 6px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  color: white;
+                  font-size: 12px;
+                  font-weight: bold;
+            }
+
+            .rating {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin-bottom: 32px;
+                  gap: 8px;
+            }
+
+            .stars {
+                  background: var(--accent-gradient);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  background-clip: text;
+                  font-size: 18px;
+            }
+
+            .rating-score {
+                  font-weight: 600;
+                  color: var(--text-primary);
+            }
+
+            .reserve-btn {
+                  background: var(--success-gradient);
+                  color: white;
+                  border: none;
+                  padding: 16px 32px;
+                  border-radius: 50px;
+                  cursor: pointer;
+                  font-weight: 600;
+                  width: 100%;
+                  transition: all 0.3s ease;
+                  font-size: 16px;
+                  position: relative;
+                  overflow: hidden;
+            }
+
+            .reserve-btn::before {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  left: -100%;
+                  width: 100%;
+                  height: 100%;
+                  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                  transition: left 0.5s ease;
+            }
+
+            .reserve-btn:hover::before {
+                  left: 100%;
+            }
+
+            .reserve-btn:hover {
+                  transform: translateY(-2px);
+                  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.4);
+            }
+
+            /* Free Packages Section */
+            .free-packages {
+                  padding: 120px 0;
+                  background: var(--dark-gradient);
+                  color: white;
+                  position: relative;
+                  overflow: hidden;
+            }
+
+            .free-packages::before {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  background: 
+                        radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(217, 70, 239, 0.2) 0%, transparent 50%);
+            }
+
+            .free-packages-content {
+                  position: relative;
+                  z-index: 2;
+            }
+
+            .free-packages-grid {
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                  gap: 32px;
+            }
+
+            .free-package-card {
+                  background: var(--glass-bg);
+                  backdrop-filter: blur(20px);
+                  border: 1px solid var(--glass-border);
+                  border-radius: 20px;
+                  padding: 32px;
+                  text-align: center;
+                  transition: all 0.4s ease;
+            }
+
+            .free-package-card:hover {
+                  background: rgba(255, 255, 255, 0.15);
+                  transform: translateY(-8px);
+                  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+            }
+
+            .free-package-image {
+                  width: 100px;
+                  height: 100px;
+                  background: var(--accent-gradient);
+                  border-radius: 20px;
+                  margin: 0 auto 24px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 40px;
+                  transition: all 0.3s ease;
+            }
+
+            .free-package-card:hover .free-package-image {
+                  transform: rotate(5deg) scale(1.1);
+            }
+
+            .free-package-card h3 {
+                  font-size: 1.25rem;
+                  font-weight: 600;
+                  margin-bottom: 8px;
+            }
+
+            .free-package-card p {
+                  opacity: 0.9;
+                  margin-bottom: 24px;
+            }
+
+            /* How It Works Section */
+            .how-it-works {
+                  padding: 120px 0;
+                  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            }
+
+            .steps-grid {
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                  gap: 48px;
+                  margin-top: 64px;
+            }
+
+            .step-card {
+                  text-align: center;
+                  padding: 48px 32px;
+                  border-radius: 24px;
+                  background: rgba(255, 255, 255, 0.8);
+                  backdrop-filter: blur(20px);
+                  border: 1px solid rgba(255, 255, 255, 0.3);
+                  transition: all 0.4s ease;
+                  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            }
+
+            .step-card:hover {
+                  transform: translateY(-8px);
+                  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+                  background: rgba(255, 255, 255, 0.95);
+            }
+
+            .step-number {
+                  width: 80px;
+                  height: 80px;
+                  background: var(--primary-gradient);
+                  color: white;
+                  border-radius: 20px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 32px;
+                  font-weight: 700;
+                  margin: 0 auto 24px;
+                  transition: all 0.3s ease;
+            }
+
+            .step-card:hover .step-number {
+                  transform: scale(1.1) rotate(5deg);
+            }
+
+            .step-title {
+                  font-size: 1.5rem;
+                  font-weight: 600;
+                  margin-bottom: 16px;
+                  color: var(--text-primary);
+            }
+
+            .step-description {
+                  color: var(--text-secondary);
+                  line-height: 1.6;
+                  font-weight: 400;
+            }
+
+            .benefits-grid {
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                  gap: 32px;
+                  margin-top: 64px;
+            }
+
+            .benefit-item {
+                  text-align: center;
+                  padding: 24px;
+            }
+
+            .benefit-icon {
+                  width: 80px;
+                  height: 80px;
+                  background: var(--success-gradient);
+                  border-radius: 20px;
+                  margin: 0 auto 16px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: white;
+                  font-size: 24px;
+                  transition: all 0.3s ease;
+            }
+
+            .benefit-item:hover .benefit-icon {
+                  transform: scale(1.1);
+            }
+
+            .benefit-item p {
+                  font-weight: 600;
+                  color: var(--text-primary);
+            }
+
+            /* FAQ Section */
+            .faq-section {
+                  padding: 120px 0;
+                  background: var(--dark-gradient);
+                  color: white;
+            }
+
+            .faq-item {
+                  background: var(--glass-bg);
+                  backdrop-filter: blur(20px);
+                  border: 1px solid var(--glass-border);
+                  margin-bottom: 24px;
+                  border-radius: 16px;
+                  overflow: hidden;
+                  transition: all 0.3s ease;
+            }
+
+            .faq-item:hover {
+                  background: rgba(255, 255, 255, 0.15);
+            }
+
+            .faq-question {
+                  padding: 24px 32px;
+                  background: transparent;
+                  color: white;
+                  cursor: pointer;
+                  font-weight: 600;
+                  font-size: 1.1rem;
+                  border: none;
+                  width: 100%;
+                  text-align: left;
+                  transition: all 0.3s ease;
+                  position: relative;
+            }
+
+            .faq-question::after {
+                  content: '+';
+                  position: absolute;
+                  right: 32px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  font-size: 24px;
+                  font-weight: 300;
+                  transition: transform 0.3s ease;
+            }
+
+            .faq-question.active::after {
+                  transform: translateY(-50%) rotate(45deg);
+            }
+
+            .faq-answer {
+                  padding: 0 32px;
+                  max-height: 0;
+                  overflow: hidden;
+                  transition: all 0.3s ease;
+                  background: rgba(255, 255, 255, 0.05);
+            }
+
+            .faq-answer.active {
+                  padding: 24px 32px;
+                  max-height: 200px;
+            }
+
+            /* Footer */
+            .footer {
+                  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+                  color: white;
+                  padding: 80px 0 40px;
+            }
+
+            .footer-content {
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                  gap: 48px;
+                  margin-bottom: 48px;
+            }
+
+            .footer-section h3 {
+                  margin-bottom: 24px;
+                  background: var(--primary-gradient);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  background-clip: text;
+                  font-weight: 600;
+                  font-size: 1.2rem;
+            }
+
+            .footer-section a {
+                  color: rgba(255, 255, 255, 0.8);
+                  text-decoration: none;
+                  margin-bottom: 12px;
+                  display: block;
+                  transition: all 0.3s ease;
+                  font-weight: 400;
+            }
+
+            .footer-section a:hover {
+                  color: white;
+                  transform: translateX(4px);
+            }
+
+            .footer-bottom {
+                  border-top: 1px solid rgba(255, 255, 255, 0.1);
+                  padding-top: 32px;
+                  margin-top: 32px;
+                  text-align: center;
+                  color: rgba(255, 255, 255, 0.6);
+            }
+
+            /* Modal Styles */
+            .modal {
+                  position: fixed;
+                  z-index: 1000;
+                  left: 0;
+                  top: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: rgba(0, 0, 0, 0.8);
+                  backdrop-filter: blur(10px);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+            }
+
+            .modal-content {
+                  background: rgba(255, 255, 255, 0.95);
+                  backdrop-filter: blur(20px);
+                  border: 1px solid rgba(255, 255, 255, 0.3);
+                  margin: 20px;
+                  padding: 48px;
+                  border-radius: 24px;
+                  width: 90%;
+                  max-width: 500px;
+                  position: relative;
+                  box-shadow: 0 32px 128px rgba(0, 0, 0, 0.3);
+                  animation: modalSlideIn 0.4s ease-out;
+            }
+
+            @keyframes modalSlideIn {
+                  from { opacity: 0; transform: translateY(-50px) scale(0.9); }
+                  to { opacity: 1; transform: translateY(0) scale(1); }
+            }
+
+            .close {
+                  position: absolute;
+                  right: 24px;
+                  top: 24px;
+                  width: 40px;
+                  height: 40px;
+                  background: var(--primary-gradient);
+                  color: white;
+                  border: none;
+                  border-radius: 50%;
+                  cursor: pointer;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 20px;
+                  transition: all 0.3s ease;
+            }
+
+            .close:hover {
+                  transform: scale(1.1) rotate(90deg);
+            }
+
+            .modal h2 {
+                  margin-bottom: 32px;
+                  background: var(--primary-gradient);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  background-clip: text;
+                  font-weight: 700;
+                  font-size: 1.8rem;
+            }
+
+            .form-group {
+                  margin-bottom: 24px;
+            }
+
+            .form-group label {
+                  display: block;
+                  margin-bottom: 8px;
+                  font-weight: 600;
+                  color: var(--text-primary);
+            }
+
+            .form-group input {
+                  width: 100%;
+                  padding: 16px;
+                  border: 2px solid rgba(0, 0, 0, 0.1);
+                  border-radius: 12px;
+                  font-size: 16px;
+                  font-family: inherit;
+                  transition: all 0.3s ease;
+                  background: rgba(255, 255, 255, 0.8);
+            }
+
+            .form-group input:focus {
+                  outline: none;
+                  border-color: #6366f1;
+                  background: white;
+                  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+            }
+
+            .form-group input[readonly] {
+                  background: rgba(0, 0, 0, 0.05);
+                  color: var(--text-secondary);
+            }
+
+            .submit-btn {
+                  background: var(--primary-gradient);
+                  color: white;
+                  padding: 18px 36px;
+                  border: none;
+                  border-radius: 50px;
+                  font-size: 16px;
+                  font-weight: 600;
+                  cursor: pointer;
+                  width: 100%;
+                  transition: all 0.3s ease;
+                  position: relative;
+                  overflow: hidden;
+            }
+
+            .submit-btn::before {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  left: -100%;
+                  width: 100%;
+                  height: 100%;
+                  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                  transition: left 0.5s ease;
+            }
+
+            .submit-btn:hover::before {
+                  left: 100%;
+            }
+
+            .submit-btn:hover {
+                  transform: translateY(-2px);
+                  box-shadow: 0 12px 48px rgba(99, 102, 241, 0.4);
+            }
+
+            /* Animations */
+            @keyframes fadeInUp {
+                  from {
+                        opacity: 0;
+                        transform: translateY(30px);
+                  }
+                  to {
+                        opacity: 1;
+                        transform: translateY(0);
+                  }
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                  .container { padding: 0 20px; }
+                  .hero-title { font-size: 2.5rem; }
+                  .deal-title { font-size: 2rem; }
+                  .deal-price { font-size: 3rem; }
+                  .cta-buttons { flex-direction: column; align-items: center; }
+                  .packages-grid { grid-template-columns: 1fr; }
+                  .modal-content { padding: 32px 24px; margin: 20px; }
+                  .package-card, .step-card { padding: 32px 24px; }
+            }
+
+            @media (max-width: 480px) {
+                  .header { min-height: 80vh; }
+                  .packages-section, .how-it-works, .free-packages, .faq-section { padding: 80px 0; }
+                  .hero-subtitle { font-size: 1.1rem; }
+            }
+
+            /* Accessibility */
+            .skip-link {
+                  position: absolute;
+                  top: -40px;
+                  left: 6px;
+                  background: var(--primary-gradient);
+                  color: white;
+                  padding: 8px 16px;
+                  text-decoration: none;
+                  border-radius: 8px;
+                  transition: top 0.3s;
+                  font-weight: 600;
+            }
+
+            .skip-link:focus {
+                  top: 6px;
+            }
+
+            /* Focus styles for better accessibility */
+            .cta-btn:focus, .reserve-btn:focus, .submit-btn:focus {
+                  outline: 3px solid rgba(99, 102, 241, 0.6);
+                  outline-offset: 2px;
+            }
+      </style>
 </head>
 
 <body>
+      <a href="#main" class="skip-link">Skip to Main Content</a>
 
-      <!-- header  -->
-      <header>
-            <div class="logo">
-                  <img src="https://www.shutterstock.com/image-vector/creative-design-word-b2b-600nw-2355011677.jpg"
-                        alt="">
+      <header class="header">
+            <div class="container">
+                  <div class="hero-content">
+                        <div class="trust-badge">
+                              Trusted by over 20,000 travelers since 2012
+                        </div>
+                        <h1 class="hero-title">
+                              Unlock free access to Las Vegas' best show tickets
+                        </h1>
+                        <p class="hero-subtitle">
+                              Reserve experiences for as soon as tomorrow. No purchase or payment info required.
+                        </p>
+                        <div class="cta-buttons">
+                              <button class="cta-btn" onclick="scrollToPackages()">Reserve Your Free Package Now →</button>
+                              <button class="cta-btn secondary-btn" onclick="scrollToMainDeal()">Reserve 2 Hotel Nights for $20 →</button>
+                        </div>
+                  </div>
             </div>
-            <form class="search-bar" action="#">
-                  <span class="search-icon"><i class="fas fa-search"></i></span>
-                  <input type="text" placeholder="Search..." aria-label="Search">
-                  <button type="submit" class="search-submit">Search</button>
-            </form>
-            <nav>
-                  <div class="menu-toggle">☰</div>
-                  <ul class="nav-menu">
-                        <!-- <li><a href="#">Home</a></li> -->
-                        <li><a href="#">All Categories<i class="fa-solid fa-angle-down"></i></a></li>
-                        <li><a href="#">Services <i class="fa-solid fa-angle-down"></i></a></li>
-                        <li><a href="#">Event <i class="fa-solid fa-angle-down"></i></a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <a href="#demo" class="nav_demo"> Get a Demo</a>
-                  </ul>
-            </nav>
       </header>
 
-      <section class="hero" id="home">
-            <div class="hero-content">
-                  <h1>GO SMART SOURCING</h1>
-                  <p>B2B Platform Made Easy. B2B connects businesses with other businesses to deliver products,
-                        services, and long-term value.</p>
-                  <div class="hero-buttons">
-                        <button class="primary-btn"
-                              onclick="window.location.href='mailto:alice@compatio.ai?subject=Demo%20Request'">Schedule
-                              a Demo</button>
-                        <button class="secondary-btn" onclick="window.location.href='#contact'">Contact Us</button>
-                  </div>
-
-            </div>
-            <div class="stats-container">
-                  <div class="stat-item glass-card">
-                        <h4 class="text-3xl font-bold text-blue-600 mb-2">15+</h4>
-                        <p class="text-gray-600">Years Experience</p>
-                  </div>
-                  <div class="stat-item glass-card">
-                        <h4 class="text-3xl font-bold text-blue-600 mb-2">500+</h4>
-                        <p class="text-gray-600">Projects Completed</p>
-                  </div>
-                  <div class="stat-item glass-card">
-                        <h4 class="text-3xl font-bold text-blue-600 mb-2">100%</h4>
-                        <p class="text-gray-600">Client Satisfaction</p>
-                  </div>
-            </div>
-      </section>
-
-      <!-- highlight -->
-      <section class="highlight-section">
-            <h2>Highlights Products</h2>
-            <div class="highlight-container">
-                  <div class="highlight-card">
-                        <div class="highlight-icon">⚡</div>
-                        <h3>Unmatched Speed</h3>
-                        <p>Experience blazing-fast performance with our cutting-edge infrastructure, optimized for
-                              efficiency.</p>
-                  </div>
-                  <div class="highlight-card">
-                        <div class="highlight-icon">🛡️</div>
-                        <h3>Elite Security</h3>
-                        <p>Safeguard your data with state-of-the-art encryption and advanced protection protocols.</p>
-                  </div>
-                  <div class="highlight-card">
-                        <div class="highlight-icon">📈</div>
-                        <h3>Insightful Analytics</h3>
-                        <p>Unlock deep insights with our sophisticated analytics suite, tailored for strategic
-                              decisions.</p>
-                  </div>
-                  <!-- <div class="highlight-card Collections">
-                        <div class="highlight-icon">☁️</div>
-                        <h3>Seamless Cloud Access</h3>
-                        <p>Access your tools effortlessly from anywhere with our robust cloud-based platform.</p>
-                  </div> -->
-            </div>
-            <div class="highlight-card">
-                  <div class="highlight-icon">📱</div>
-                  <h3>Cross Platform</h3>
-                  <p>Seamlessly switch between devices with our fully synchronized, cross-platform experience.</p>
-            </div>
-            </div>
-      </section>
-
-      <!-- about -->
-      <section class="about" id="about">
-            <div class="about-container">
-                  <div class="about-hero">
-                        <h1>About NeuraNet AI</h1>
-                        <p class="subtitle">Empowering businesses with cutting-edge AI solutions to drive innovation and
-                              efficiency.</p>
-                  </div>
-
-                  <div class="about-highlights">
-                        <div class="about-card">
-                              <div class="about-icon">🚀</div>
-                              <h3>10+ Years</h3>
-                              <p>Leading innovation in AI technology for B2B solutions.</p>
-                        </div>
-                        <div class="about-card">
-                              <div class="about-icon">🌍</div>
-                              <h3>Global Reach</h3>
-                              <p>Serving 500+ enterprises across 20 countries.</p>
-                        </div>
-                        <div class="about-card">
-                              <div class="about-icon">🤝</div>
-                              <h3>Trusted Partner</h3>
-                              <p>Collaborating with top-tier brands to drive success.</p>
-                        </div>
-                  </div>
-                  <div class="about-timeline">
-                        <h2>Our Journey</h2>
-                        <div class="timeline">
-                              <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                          <h3>2015</h3>
-                                          <p>Founded NeuraNet AI to pioneer intelligent automation.</p>
-                                    </div>
-                              </div>
-                              <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                          <h3>2018</h3>
-                                          <p>Launched our flagship AI analytics platform.</p>
-                                    </div>
-                              </div>
-                              <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                          <h3>2022</h3>
-                                          <p>Expanded to serve global enterprises in 20+ industries.</p>
-                                    </div>
-                              </div>
-                              <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                          <h3>2025</h3>
-                                          <p>Recognized as a leader in AI-driven SaaS solutions.</p>
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
-            </div>
-      </section>
-
-      <!-- how it work -->
-      <section class="how-it-works" id="how-it-works">
+      <section id="main-deal" class="main-deal">
             <div class="container">
-                  <h2>How It Works</h2>
-                  <p class="subtitle">Discover how our product transforms your workflow in four simple steps</p>
+                  <div class="deal-content">
+                        <h2 class="deal-title">Get Two Nights in a Vegas Resort for Only</h2>
+                        <div class="deal-price">$19.95</div>
+                        <p class="deal-subtitle">Yes, it's actually only $19.95 total. Learn how.</p>
+                        <p class="deal-subtitle">(+ Get a free $40 Amazon gift card to use asap!)</p>
+                        <button class="cta-btn" onclick="scrollToPackages()">Reserve Your 2-Night Vegas Getaway</button>
+                  </div>
+            </div>
+      </section>
+
+      <main id="main" class="packages-section">
+            <div class="container">
+                  <h2 class="section-title">2-Night Vegas Getaway Package</h2>
+                  <div class="packages-grid">
+                        <div class="package-card">
+                              <div class="package-icon">🏨</div>
+                              <h3 class="package-title">2-Night Vegas Stay</h3>
+                              <p class="package-subtitle">Vegas Strip Adjacent</p>
+                              <ul class="package-features">
+                                    <li>2 Nights for 4 Guests</li>
+                                    <li>Resort Nights</li>
+                                    <li>Travel within 6 months</li>
+                              </ul>
+                              <div class="rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-score">4.5</span>
+                              </div>
+                              <button class="reserve-btn" onclick="openReservation('vegas-stay')">Reserve Free Tickets</button>
+                        </div>
+
+                        <div class="package-card">
+                              <div class="package-icon">🎁</div>
+                              <h3 class="package-title">$40 Amazon Card</h3>
+                              <p class="package-subtitle">Use Now or Later</p>
+                              <ul class="package-features">
+                                    <li>Amazon.com Gift Card</li>
+                                    <li>Delivered digitally</li>
+                                    <li>No expiration</li>
+                              </ul>
+                              <div class="rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-score">4.5</span>
+                              </div>
+                              <button class="reserve-btn" onclick="openReservation('amazon-card')">Reserve Free Tickets</button>
+                        </div>
+
+                        <div class="package-card">
+                              <div class="package-icon">🍽️</div>
+                              <h3 class="package-title">Lunch for Two</h3>
+                              <p class="package-subtitle">Pampas Steakhouse</p>
+                              <ul class="package-features">
+                                    <li>In Planet Hollywood</li>
+                                    <li>Tableside Buffet</li>
+                                    <li>Premium dining experience</li>
+                              </ul>
+                              <div class="rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-score">4.5</span>
+                              </div>
+                              <button class="reserve-btn" onclick="openReservation('lunch')">Reserve Free Tickets</button>
+                        </div>
+
+                        <div class="package-card">
+                              <div class="package-icon">🎭</div>
+                              <h3 class="package-title">LA Comedy Club</h3>
+                              <p class="package-subtitle">The STRAT</p>
+                              <ul class="package-features">
+                                    <li>Admission for Two</li>
+                                    <li>Nightly Shows</li>
+                                    <li>Premium entertainment</li>
+                              </ul>
+                              <div class="rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-score">4.5</span>
+                              </div>
+                              <button class="reserve-btn" onclick="openReservation('comedy')">Reserve Free Tickets</button>
+                        </div>
+                  </div>
+
+                  <div style="text-align: center;">
+                        <button class="cta-btn" onclick="openReservation('complete-package')">Reserve a Package</button>
+                        <p style="margin-top: 32px; font-size: 18px; font-weight: 600; color: var(--text-primary);">
+                              We're serious! Only $19.95 for a limited time only
+                        </p>
+                  </div>
+            </div>
+      </main>
+
+      <section class="free-packages">
+            <div class="container">
+                  <div class="free-packages-content">
+                        <h2 class="section-title" style="color: white;">Already Booked a Hotel? Check Out Our Free Packages</h2>
+                        <p style="text-align: center; font-size: 1.2rem; margin-bottom: 64px; opacity: 0.9;">
+                              Reserve a 100% free package retailing at over $300. One offer valid per household.
+                        </p>
+
+                        <div class="free-packages-grid">
+                              <div class="free-package-card">
+                                    <div class="free-package-image">🚗</div>
+                                    <h3>Free 2-Day Tesla</h3>
+                                    <p>48-Hour Tesla Rental</p>
+                                    <button class="reserve-btn" onclick="openReservation('tesla')">Book A Free Tesla</button>
+                              </div>
+
+                              <div class="free-package-card">
+                                    <div class="free-package-image">🎨</div>
+                                    <h3>Blue Man VIP Night</h3>
+                                    <p>Attractions + Dinner For Two</p>
+                                    <button class="reserve-btn" onclick="openReservation('blueman')">Reserve Blue Man</button>
+                              </div>
+
+                              <div class="free-package-card">
+                                    <div class="free-package-image">🎡</div>
+                                    <h3>High Roller Package</h3>
+                                    <p>Attractions + Dinner For Two</p>
+                                    <button class="reserve-btn" onclick="openReservation('highroller')">Book Free Passes</button>
+                              </div>
+
+                              <div class="free-package-card">
+                                    <div class="free-package-image">🌐</div>
+                                    <h3>Free Sphere Passes</h3>
+                                    <p>Admission For Two</p>
+                                    <button class="reserve-btn" onclick="openReservation('sphere')">Book Free Passes</button>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </section>
+
+      <section class="how-it-works">
+            <div class="container">
+                  <h2 class="section-title">How it Works</h2>
+                  <p style="text-align: center; font-size: 1.2rem; margin-bottom: 32px; color: var(--text-secondary);">
+                        Choose Your Dream Package to Kickstart Your Vegas Journey!
+                  </p>
+
                   <div class="steps-grid">
-                        <div class="step">
+                        <div class="step-card">
                               <div class="step-number">1</div>
-                              <div class="step-icon">📝</div>
-                              <h3>Sign Up</h3>
-                              <p>Create an account in minutes to start leveraging our powerful tools.</p>
+                              <h3 class="step-title">Select Your Package</h3>
+                              <p class="step-description">
+                                    Select from our exclusive packages, offering a variety of premium attractions and dining experiences - all at zero cost to you, with no hidden fees or commitments. It's all free!
+                              </p>
                         </div>
-                        <div class="step">
+
+                        <div class="step-card">
                               <div class="step-number">2</div>
-                              <div class="step-icon">⚙️</div>
-                              <h3>Integrate</h3>
-                              <p>Connect our solution seamlessly with your existing systems and tools.</p>
+                              <h3 class="step-title">Confirm Your Contact Info</h3>
+                              <p class="step-description">
+                                    Complete our quick sign up form with just your name and phone number. Your details are secure and used solely to confirm your hotel reservation. No payment required!
+                              </p>
                         </div>
-                        <div class="step">
+
+                        <div class="step-card">
                               <div class="step-number">3</div>
-                              <div class="step-icon">🤖</div>
-                              <h3>Automate</h3>
-                              <p>Let our AI-driven automation handle repetitive tasks efficiently.</p>
+                              <h3 class="step-title">Attend Resort Tour & Get Rewards</h3>
+                              <p class="step-description">
+                                    Attend a tour at one of our featured Las Vegas resorts and receive your selected gift package. There's no obligation to buy, sign, or join anything. Just show up to claim your gift package - no strings attached!
+                              </p>
                         </div>
-                        <div class="step">
-                              <div class="step-number">4</div>
-                              <div class="step-icon">📊</div>
-                              <h3>Analyze & Optimize</h3>
-                              <p>Use real-time insights to make informed decisions and improve results.</p>
+                  </div>
+
+                  <div class="benefits-grid">
+                        <div class="benefit-item">
+                              <div class="benefit-icon">✓</div>
+                              <p><strong>No hidden fees</strong></p>
+                        </div>
+                        <div class="benefit-item">
+                              <div class="benefit-icon">★</div>
+                              <p><strong>Exceptional Guest Service</strong></p>
+                        </div>
+                        <div class="benefit-item">
+                              <div class="benefit-icon">♦</div>
+                              <p><strong>Premium Partners</strong></p>
+                        </div>
+                        <div class="benefit-item">
+                              <div class="benefit-icon">⚡</div>
+                              <p><strong>Effortless Booking</strong></p>
                         </div>
                   </div>
             </div>
       </section>
 
+      <section class="faq-section">
+            <div class="container">
+                  <h2 class="section-title" style="color: white;">Frequently Asked Questions</h2>
 
-      <!-- integration -->
-      <section class="integrations" id="integrations">
-            <div class="integrations-container">
-                  <h2>Seamless Integrations</h2>
-                  <p class="subtitle">Connect our AI platform with your favorite tools to streamline workflows</p>
-                  <div class="integrations-grid">
-                        <div class="integration-card" data-integration="slack">
-                              <img src="https://cdn.worldvectorlogo.com/logos/slack-1.svg" alt="Slack"
-                                    class="integration-logo">
-                              <h3>Slack</h3>
-                              <p>Real-time notifications and AI insights directly in your Slack channels.</p>
-                              <button class="learn-more-btn">Learn More</button>
-                        </div>
-                        <div class="integration-card" data-integration="zapier">
-                              <img src="https://cdn.worldvectorlogo.com/logos/zapier-1.svg" alt="Zapier"
-                                    class="integration-logo">
-                              <h3>Zapier</h3>
-                              <p>Automate workflows by connecting with thousands of apps via Zapier.</p>
-                              <button class="learn-more-btn">Learn More</button>
-                        </div>
-                        <div class="integration-card" data-integration="salesforce">
-                              <img src="https://cdn.worldvectorlogo.com/logos/salesforce-2.svg" alt="Salesforce"
-                                    class="integration-logo">
-                              <h3>Salesforce</h3>
-                              <p>Enhance CRM with AI-driven analytics and automation.</p>
-                              <button class="learn-more-btn">Learn More</button>
-                        </div>
-                        <div class="integration-card" data-integration="google">
-                              <img src="https://kinsta.com/wp-content/uploads/2018/02/google-workspace-1024x512.jpg"
-                                    alt="Google Workspace" class="integration-logo">
-                              <h3>Google Workspace</h3>
-                              <p>Integrate with Gmail, Drive, and Calendar for seamless productivity.</p>
-                              <button class="learn-more-btn">Learn More</button>
-                        </div>
-                        <div class="integration-card" data-integration="teams">
-                              <img src="https://cdn.worldvectorlogo.com/logos/microsoft-teams-1.svg"
-                                    alt="Microsoft Teams" class="integration-logo">
-                              <h3>Microsoft Teams</h3>
-                              <p>Collaborate effortlessly with AI insights in Teams channels.</p>
-                              <button class="learn-more-btn">Learn More</button>
-                        </div>
-                        <div class="integration-card" data-integration="shopify">
-                              <img src="https://cdn.worldvectorlogo.com/logos/shopify-2.svg" alt="Shopify"
-                                    class="integration-logo">
-                              <h3>Shopify</h3>
-                              <p>Boost e-commerce with AI-powered inventory and customer insights.</p>
-                              <button class="learn-more-btn">Learn More</button>
-                        </div>
-                        <div class="integration-card" data-integration="asana">
-                              <img src="https://cdn.worldvectorlogo.com/logos/asana-1.svg" alt="Asana"
-                                    class="integration-logo">
-                              <h3>Asana</h3>
-                              <p>Streamline project management with AI-enhanced task automation in Asana.</p>
-                              <button class="learn-more-btn">Learn More</button>
-                        </div>
-                        <div class="integration-card" data-integration="dropbox">
-                              <img src="https://cdn.worldvectorlogo.com/logos/dropbox-2.svg" alt="Dropbox"
-                                    class="integration-logo">
-                              <h3>Dropbox</h3>
-                              <p>Securely manage and share files with AI-powered organization in Dropbox.</p>
-                              <button class="learn-more-btn">Learn More</button>
+                  <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                              Is this stuff really free? What's the catch?
+                        </button>
+                        <div class="faq-answer">
+                              <p>Yes, all packages have no hidden fees. All we ask in return is for you to attend a presentation at a partner Vegas resort, with no obligations to purchase anything to receive your gifts.</p>
                         </div>
                   </div>
-            </div>
-            <div class="modal" id="integrationModal">
-                  <div class="modal-content">
-                        <span class="close-btn">&times;</span>
-                        <h3 id="modalTitle"></h3>
-                        <p id="modalDescription"></p>
-                        <a href="#" id="modalLink" class="modal-cta">Get Started</a>
-                  </div>
-            </div>
-      </section>
 
-      <!-- solution -->
-      <section class="solutions" id="solutions">
-            <div class="solutions-container">
-                  <h2>Tailored Industry Solutions</h2>
-                  <p class="subtitle">Discover how our AI platform empowers success across key industries</p>
-                  <div class="solutions-grid">
-                        <div class="solution-card">
-                              <div class="solution-icon">🏥</div>
-                              <h3>Healthcare</h3>
-                              <p>Revolutionize patient outcomes with AI-driven diagnostics, predictive analytics, and
-                                    optimized administrative processes.</p>
+                  <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                              What do I need to do to get started?
+                        </button>
+                        <div class="faq-answer">
+                              <p>To get started, simply select a package from our offerings and complete the quick sign-up form. No payment info is needed - just your name, email and phone number. We'll only use it for reservation purposes.</p>
                         </div>
-                        <div class="solution-card">
-                              <div class="solution-icon">💸</div>
-                              <h3>Finance</h3>
-                              <p>Enhance decision-making with real-time risk assessment, fraud detection, and
-                                    personalized customer insights.</p>
+                  </div>
+
+                  <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                              What is the guided tour? What can I expect?
+                        </button>
+                        <div class="faq-answer">
+                              <p>The guided tour is an informative visit to one of our partner resorts. You'll learn about the resort's amenities and offerings to save money on your next hotel stay. There's no obligation to buy, sign, or join anything.</p>
                         </div>
-                        <div class="solution-card">
-                              <div class="solution-icon">🏭</div>
-                              <h3>Manufacturing</h3>
-                              <p>Streamline operations with AI-powered supply chain optimization and predictive
-                                    maintenance tools.</p>
+                  </div>
+
+                  <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                              Can I choose the date and time of my tour?
+                        </button>
+                        <div class="faq-answer">
+                              <p>Yes, we offer flexible scheduling options and will help find the best day and time availability for you.</p>
                         </div>
-                        <div class="solution-card">
-                              <div class="solution-icon">🛍️</div>
-                              <h3>Retail</h3>
-                              <p>Drive sales with personalized customer experiences and AI-optimized inventory
-                                    management.</p>
+                  </div>
+
+                  <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                              What if I need more show tickets or vouchers?
+                        </button>
+                        <div class="faq-answer">
+                              <p>Have more guests? Our friendly concierge is here to help. For participating you'll receive exclusive access to purchase our show tickets, dinner vouchers, and more at our wholesale prices.</p>
+                        </div>
+                  </div>
+
+                  <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                              What if I have more questions?
+                        </button>
+                        <div class="faq-answer">
+                              <p>Our local team of Vacation Buddies are based here in Las Vegas and are available to assist you by phone seven days per week, from 9am-6pm PST.</p>
                         </div>
                   </div>
             </div>
       </section>
 
-
-
-      <!-- price section -->
-      <section class="pricing" id="pricing">
-            <div class="pricing-container">
-                  <h2>Find the Perfect Plan</h2>
-                  <p class="subtitle">Transparent pricing tailored to your business, with flexible options</p>
-                  <div class="pricing-toggle">
-                        <span class="toggle-label">Monthly</span>
-                        <label class="switch">
-                              <input type="checkbox" id="pricingToggle">
-                              <span class="slider"></span>
-                        </label>
-                        <span class="toggle-label">Yearly <span class="discount">Save 25%</span></span>
-                  </div>
-                  <div class="pricing-grid">
-                        <div class="pricing-card">
-                              <h3>Basic</h3>
-                              <div class="price">
-                                    <span class="monthly">$19</span>
-                                    <span class="yearly">$171</span>
-                                    <span class="period">/month</span>
-                              </div>
-                              <ul class="features">
-                                    <li>Core AI Automation</li>
-                                    <li>Basic Analytics Dashboard</li>
-                                    <li>Email Support (24/7)</li>
-                                    <li>Up to 5 Users</li>
-                              </ul>
-                              <button class="cta-btn signup">Get Started</button>
-                        </div>
-                        <div class="pricing-card highlighted">
-                              <span class="popular-badge">Most Popular</span>
-                              <h3>Pro</h3>
-                              <div class="price">
-                                    <span class="monthly">$49</span>
-                                    <span class="yearly">$441</span>
-                                    <span class="period">/month</span>
-                              </div>
-                              <ul class="features">
-                                    <li>Advanced AI Automation</li>
-                                    <li>Real-Time Analytics</li>
-                                    <li>Priority Support</li>
-                                    <li>Up to 25 Users</li>
-                                    <li>Custom Integrations</li>
-                              </ul>
-                              <button class="cta-btn signup">Get Started</button>
-                        </div>
-                        <div class="pricing-card">
-                              <h3>Enterprise</h3>
-                              <div class="price">Custom</div>
-                              <ul class="features">
-                                    <li>Full AI Suite Access</li>
-                                    <li>Advanced Analytics & Insights</li>
-                                    <li>Dedicated 24/7 Support</li>
-                                    <li>Unlimited Users</li>
-                                    <li>Custom API & Integrations</li>
-                              </ul>
-                              <button class="cta-btn demo">Book a Demo</button>
-                        </div>
-                  </div>
-            </div>
-      </section>
-
-
-      <!-- testimonials -->
-      <section class="testimonials-section" id="testimonials">
-            <div class="testimonials-container">
-                  <h2>Our AI-Powered Success Stories</h2>
-                  <div class="underline"></div>
-                  <div class="testimonials-carousel">
-                        <div class="testimonial">
-                              <img src="https://t4.ftcdn.net/jpg/02/14/74/61/360_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg"
-                                    alt="John Doe" class="client-image">
-                              <h3 class="client-name">John Doe</h3>
-                              <p class="client-position">CTO, TechNova Solutions</p>
-                              <div class="star-rating">
-                                    <svg class="star filled" viewBox="0 0 24 24">
-                                          <path
-                                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <svg class="star filled" viewBox="0 0 24 24">
-                                          <path
-                                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <svg class="star filled" viewBox="0 0 24 24">
-                                          <path
-                                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <svg class="star filled" viewBox="0 0 24 24">
-                                          <path
-                                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <svg class="star filled" viewBox="0 0 24 24">
-                                          <path
-                                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                              </div>
-                              <p class="testimonial-text">"The AI-driven analytics platform transformed our data
-                                    processing, delivering insights in record time with unparalleled accuracy."</p>
-                              <button class="read-more-btn">Discover More</button>
-                        </div>
-                        <div class="testimonial">
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfNqGSkt8oYPyD5Q0O-E1F3HAm7JGaC813Mg&s"
-                                    alt="Sarah Smith" class="client-image">
-                              <h3 class="client-name">Sarah Smith</h3>
-                              <p class="client-position">AI Strategy Lead, InnovateAI</p>
-                              <div class="star-rating">
-                                    <svg class="star filled" viewBox="0 0 24 24">
-                                          <path
-                                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <svg class="star filled" viewBox="0 0 24 24">
-                                          <path
-                                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <svg class="star filled" viewBox="0 0 24 24">
-                                          <path
-                                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <svg class="star filled" viewBox="0 0 24 24">
-                                          <path
-                                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <svg class="star" viewBox="0 0 24 24">
-                                          <path
-                                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                              </div>
-                              <p class="testimonial-text">"Their AI solutions streamlined our workflows, boosting
-                                    efficiency and enabling seamless automation across our operations."</p>
-                              <button class="read-more-btn">Discover More</button>
-                        </div>
-                        <div class="testimonial">
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9pLXzA9hBra50yadnlITAYDamBA8x12krsw&s"
-                                    alt="Michael Chen" class="client-image">
-                              <h3 class="client-name">Michael Chen</h3>
-                              <p class="client-position">Director of Innovation, FutureTech</p>
-                              <div class="star-rating">
-                                    <svg class="star filled" viewBox="0 0 24 24">
-                                          <path
-                                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <svg class="star filled" viewBox="0 0 24 24">
-                                          <path
-                                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <svg class="star filled" viewBox="0 0 24 24">
-                                          <path
-                                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <svg class="star filled" viewBox="0 0 24 24">
-                                          <path
-                                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                                    <svg class="star filled" viewBox="0 0 24 24">
-                                          <path
-                                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                    </svg>
-                              </div>
-                              <p class="testimonial-text">"Implementing their AI tools revolutionized our
-                                    decision-making process, driving innovation and success in our projects."</p>
-                              <button class="read-more-btn">Discover More</button>
-                        </div>
-                  </div>
-                  <div class="nav-buttons">
-                        <button class="nav-btn prev" aria-label="Previous testimonial">&#10094;</button>
-                        <button class="nav-btn next" aria-label="Next testimonial">&#10095;</button>
-                  </div>
-            </div>
-      </section>
-
-
-      <!-- call -->
-      <section class="call-section">
-            <h2>Ready to Get Started?</h2>
-            <p>Contact us today to discuss your oilfield service needs and discover how we can help optimize your
-                  operations.</p>
-            <button class="call_btn">Contact Us Now</button>
-      </section>
-
-      <!-- contact -->
-
-      <section class="contact-section" id="contact">
-            <div class="contact-container">
-                  <div class="contact-info">
-                        <h2>Connect With Us</h2>
-                        <p class="subtitle">Reach out to unlock the full potential of our AI solutions</p>
-                        <div class="detail-item">
-                              <i class="fas fa-map-marker-alt"></i>
-                              <div>
-                                    <h4>Our Location</h4>
-                                    <p>123 Business Street, Suite 100<br>Calgary, AB T2P 2V7</p>
-                              </div>
-                        </div>
-                        <div class="detail-item">
-                              <i class="fas fa-phone-alt"></i>
-                              <div>
-                                    <h4>Call Us</h4>
-                                    <p>+1 (403) 123-4567</p>
-                              </div>
-                        </div>
-                        <div class="detail-item">
-                              <i class="fas fa-envelope"></i>
-                              <div>
-                                    <h4>Email Us</h4>
-                                    <p>info@independentoilfield.com</p>
-                              </div>
-                        </div>
-                  </div>
-                  <div class="contact-form">
-                        <form>
-                              <div class="form-group">
-                                    <label for="name">Full Name</label>
-                                    <input type="text" id="name" placeholder="Enter your name" required>
-                                    <i class="fas fa-user input-icon"></i>
-                              </div>
-                              <div class="form-group">
-                                    <label for="email">Email Address</label>
-                                    <input type="email" id="email" placeholder="Enter your email" required>
-                                    <i class="fas fa-envelope input-icon"></i>
-                              </div>
-                              <div class="form-group">
-                                    <label for="subject">Subject</label>
-                                    <input type="text" id="subject" placeholder="Enter subject" required>
-                                    <i class="fas fa-tag input-icon"></i>
-                              </div>
-                              <div class="form-group">
-                                    <label for="message">Message</label>
-                                    <textarea id="message" rows="5" placeholder="Enter your message"
-                                          required></textarea>
-                              </div>
-                              <button type="submit" class="send-message">Send Message</button>
-                        </form>
-                  </div>
-            </div>
-      </section>
-
-      <!-- footer -->
       <footer class="footer">
-            <div class="footer-top">
-                  <div class="newsletter">
-                        <h3>Stay Updated</h3>
-                        <p class="subtitle">Subscribe to our newsletter for the latest AI insights</p>
-                        <form>
-                              <input type="email" placeholder="Enter email address" required>
-                              <button type="submit">Subscribe</button>
-                        </form>
-                  </div>
-            </div>
-            <div class="footer-container">
-                  <div class="footer-section social">
-                        <div class="logo">
-                              <img src="https://www.shutterstock.com/image-vector/creative-design-word-b2b-600nw-2355011677.jpg"
-                                    alt="logo">
-
+            <div class="container">
+                  <div class="footer-content">
+                        <div class="footer-section">
+                              <h3>Contact Us</h3>
+                              <a href="tel:8888128339">(888) 812-8339</a>
+                              <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 12px;">Call Us! (9am - 6pm PST, 7 Days)</p>
+                              <a href="mailto:support@thevacationbuddies.com">support@thevacationbuddies.com</a>
                         </div>
-                        <h4>Social</h4>
-                        <ul>
-                              <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                              <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                              <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                              <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                        </ul>
+                        <div class="footer-section">
+                              <h3>Quick Links</h3>
+                              <a href="#" onclick="scrollToPackages()">Packages</a>
+                              <a href="#" onclick="scrollToSection('.how-it-works')">How It Works</a>
+                              <a href="#" onclick="scrollToSection('.faq-section')">FAQ</a>
+                        </div>
+                        <div class="footer-section">
+                              <h3>Legal</h3>
+                              <a href="#">Terms & Conditions</a>
+                              <a href="#">Data Use Policy</a>
+                              <p style="font-size: 12px; margin-top: 24px; color: rgba(255, 255, 255, 0.6);">
+                                    Promotions Offered to Advertise Timeshare
+                              </p>
+                        </div>
                   </div>
-                  <div class="footer-section resources">
-                        <h4>About</h4>
-                        <ul>
-                              <li><a href="#">Our Team</a></li>
-                              <li><a href="#">Leadership</a></li>
-                              <li><a href="#">Careers</a></li>
-                              <li><a href="#">AI Blog</a></li>
-                        </ul>
-                  </div>
-                  <div class="footer-section resources">
-                        <h4>Resources</h4>
-                        <ul>
-                              <li><a href="#">AI Security</a></li>
-                              <li><a href="#">Global Impact</a></li>
-                              <li><a href="#">Analytics Hub</a></li>
-                              <li><a href="#">Privacy Policy</a></li>
-                        </ul>
-                  </div>
-                  <div class="footer-section discover">
-                        <h4>Discover</h4>
-                        <ul>
-                              <li><a href="#">AI Solutions</a></li>
-                              <li><a href="#">Enterprise Plans</a></li>
-                              <li><a href="#">AI for Good</a></li>
-                              <li><a href="#">Support Center</a></li>
-                        </ul>
-                  </div>
-
-
-                  <div class="footer-section company">
-                        <h4>NeuraNet AI</h4>
-                        <p>A pioneer in AI-driven solutions, transforming industries with intelligent automation and
-                              over 10 years of innovation.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                  </div>
-
-            </div>
-            <div class="footer-bottom">
-                  <div class="partners">
-                        <span>Our Partners:</span>
-                        <a href="#">TechCorp</a>
-                        <a href="#">AI Innovate</a>
-                        <a href="#">DataSync</a>
-                        <a href="#">See All</a>
-                  </div>
-                  <p>© 2025 NeuraNet AI Solutions. All rights reserved | Made with ❤️ by xAI</p>
-                  <div class="legal-links">
-                        <a href="#">Terms</a> | <a href="#">Privacy</a> | <a href="#">Ethics & Compliance</a>
+                  <div class="footer-bottom">
+                        <p>&copy; 2025 The Vacation Buddies</p>
+                        <p>We're the best buddies your vacation could have.</p>
+                        <p style="font-size: 12px; margin-top: 16px;">This Site Was Baked With Love by Snackable Technology</p>
                   </div>
             </div>
       </footer>
 
-      <script>
-            const prevBtn = document.querySelector('.nav-btn.prev');
-            const nextBtn = document.querySelector('.nav-btn.next');
-            let currentIndex = 0;
-
-            // blog
-            document.addEventListener('DOMContentLoaded', () => {
-                  const loadMoreBtn = document.querySelector('.load-more-btn');
-                  const hiddenPosts = document.querySelectorAll('.blog-post.hidden');
-
-                  if (hiddenPosts.length === 0) {
-                        loadMoreBtn.style.display = 'none';
-                  }
-
-                  loadMoreBtn.addEventListener('click', () => {
-                        hiddenPosts.forEach(post => {
-                              post.classList.remove('hidden');
-                        });
-                        loadMoreBtn.style.display = 'none';
-                  });
-            });
-
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-
-            menuToggle.addEventListener('click', () => {
-                  navMenu.classList.toggle('active');
-            });
-
-            // Smooth scrolling for navigation links
-            const navLinks = document.querySelectorAll('.nav-menu a');
-
-            navLinks.forEach(link => {
-                  link.addEventListener('click', e => {
-                        e.preventDefault();
-                        const targetId = link.getAttribute('href');
-                        const targetSection = document.querySelector(targetId);
-                        targetSection.scrollIntoView({
-                              behavior: 'smooth'
-                        });
-                  });
-            }); document.addEventListener('DOMContentLoaded', () => {
-                  const heroContent = document.querySelector('.hero-content');
-                  setTimeout(() => {
-                        heroContent.classList.add('visible');
-                  }, 100);
-            });
-
-            // features section
-            document.querySelectorAll('.feature-card').forEach((card, index) => {
-                  card.style.opacity = '0';
-                  card.style.transform = 'translateY(20px)';
-                  setTimeout(() => {
-                        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                  }, index * 200);
-            });
-
-            document.addEventListener('DOMContentLoaded', () => {
-                  const testimonials = document.querySelectorAll('.testimonial');
-                  const prevBtn = document.querySelector('.nav-btn.prev');
-                  const nextBtn = document.querySelector('.nav-btn.next');
-                  const carousel = document.querySelector('.testimonials-carousel');
-                  let currentIndex = 0;
-                  let autoSlideInterval;
-
-                  function updateCarousel() {
-                        testimonials.forEach((testimonial, index) => {
-                              testimonial.classList.toggle('active', index === currentIndex);
-                        });
-                  }
-
-                  function startAutoSlide() {
-                        autoSlideInterval = setInterval(() => {
-                              currentIndex = (currentIndex + 1) % testimonials.length;
-                              updateCarousel();
-                        }, 1500);
-                  }
-
-                  function stopAutoSlide() {
-                        clearInterval(autoSlideInterval);
-                  }
-
-                  prevBtn.addEventListener('click', () => {
-                        stopAutoSlide();
-                        currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-                        updateCarousel();
-                        startAutoSlide();
-                  });
-
-                  nextBtn.addEventListener('click', () => {
-                        stopAutoSlide();
-                        currentIndex = (currentIndex + 1) % testimonials.length;
-                        updateCarousel();
-                        startAutoSlide();
-                  });
-
-                  carousel.addEventListener('mouseenter', stopAutoSlide);
-                  carousel.addEventListener('mouseleave', startAutoSlide);
-
-                  updateCarousel();
-                  startAutoSlide();
-            });
-      </script>
-
-      <!-- price section -->
-      <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                  const toggle = document.getElementById('pricingToggle');
-                  toggle.addEventListener('change', () => {
-                        document.querySelectorAll('.pricing-card .price').forEach(price => {
-                              price.querySelector('.monthly').style.display = toggle.checked ? 'none' : 'inline';
-                              price.querySelector('.yearly').style.display = toggle.checked ? 'inline' : 'none';
-                        });
-                  });
-            });
-      </script>
-      <!-- integration -->
+      <!-- Reservation Modal -->
+      <div id="reservationModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                  <button class="close" onclick="closeModal()">×</button>
+                  <h2>Reserve Your Package</h2>
+                  <form id="reservationForm">
+                        <div class="form-group">
+                              <label for="name">Full Name *</label>
+                              <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                              <label for="email">Email Address *</label>
+                              <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                              <label for="phone">Phone Number *</label>
+                              <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                              <label for="package">Selected Package</label>
+                              <input type="text" id="package" name="package" readonly>
+                        </div>
+                        <div class="form-group">
+                              <label style="display: flex; align-items: center; gap: 12px;">
+                                    <input type="checkbox" required style="width: auto;"> 
+                                    I agree that this is a timeshare presentation and understand the terms
+                              </label>
+                        </div>
+                        <button type="submit" class="submit-btn">Reserve My Package</button>
+                  </form>
+            </div>
+      </div>
 
       <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                  const modal = document.getElementById('integrationModal');
-                  const modalTitle = document.getElementById('modalTitle');
-                  const modalDescription = document.getElementById('modalDescription');
-                  const modalLink = document.getElementById('modalLink');
-                  const closeBtn = document.querySelector('.close-btn');
-                  const learnMoreButtons = document.querySelectorAll('.learn-more-btn');
-
-                  const integrationData = {
-                        slack: {
-                              title: 'Slack Integration',
-                              description: 'Integrate our AI platform with Slack to receive real-time notifications, share insights directly in channels, and automate team workflows effortlessly.',
-                              link: '#slack-signup'
-                        },
-                        zapier: {
-                              title: 'Zapier Integration',
-                              description: 'Connect our platform with thousands of apps through Zapier to automate repetitive tasks and create custom workflows tailored to your business needs.',
-                              link: '#zapier-signup'
-                        },
-                        salesforce: {
-                              title: 'Salesforce Integration',
-                              description: 'Enhance your CRM with our AI-driven analytics, enabling smarter lead scoring, personalized customer engagement, and streamlined sales processes.',
-                              link: '#salesforce-signup'
-                        },
-                        google: {
-                              title: 'Google Workspace Integration',
-                              description: 'Sync with Gmail, Google Drive, and Calendar to boost productivity, automate document analysis, and integrate AI insights into your daily workflows.',
-                              link: '#google-signup'
-                        },
-                        teams: {
-                              title: 'Microsoft Teams Integration',
-                              description: 'Bring AI-powered insights into Microsoft Teams for seamless collaboration, real-time data sharing, and automated task management within your team.',
-                              link: '#teams-signup'
-                        },
-                        shopify: {
-                              title: 'Shopify Integration',
-                              description: 'Leverage AI to optimize your Shopify store with predictive inventory management, personalized customer recommendations, and enhanced e-commerce analytics.',
-                              link: '#shopify-signup'
-                        }
-                  };
-
-                  learnMoreButtons.forEach(button => {
-                        button.addEventListener('click', () => {
-                              const card = button.closest('.integration-card');
-                              const integration = card.dataset.integration;
-                              const data = integrationData[integration];
-
-                              modalTitle.textContent = data.title;
-                              modalDescription.textContent = data.description;
-                              modalLink.href = data.link;
-
-                              modal.style.display = 'flex';
-                        });
+            // Smooth scrolling functions
+            function scrollToPackages() {
+                  document.querySelector('.packages-section').scrollIntoView({
+                        behavior: 'smooth'
                   });
+            }
 
-                  closeBtn.addEventListener('click', () => {
-                        modal.style.display = 'none';
+            function scrollToMainDeal() {
+                  document.querySelector('.main-deal').scrollIntoView({
+                        behavior: 'smooth'
                   });
+            }
 
-                  window.addEventListener('click', (e) => {
-                        if (e.target === modal) {
-                              modal.style.display = 'none';
+            function scrollToSection(selector) {
+                  document.querySelector(selector).scrollIntoView({
+                        behavior: 'smooth'
+                  });
+            }
+
+            // FAQ toggle functionality
+            function toggleFaq(button) {
+                  const answer = button.nextElementSibling;
+                  const allAnswers = document.querySelectorAll('.faq-answer');
+                  const allQuestions = document.querySelectorAll('.faq-question');
+
+                  // Close all other FAQs
+                  allAnswers.forEach(ans => {
+                        if (ans !== answer) {
+                              ans.classList.remove('active');
                         }
                   });
+                  
+                  allQuestions.forEach(q => {
+                        if (q !== button) {
+                              q.classList.remove('active');
+                        }
+                  });
+
+                  // Toggle current FAQ
+                  answer.classList.toggle('active');
+                  button.classList.toggle('active');
+            }
+
+            // Modal functionality
+            const packages = {
+                  'vegas-stay': '2-Night Vegas Stay',
+                  'amazon-card': '$40 Amazon Gift Card',
+                  'lunch': 'Pampas Steakhouse Lunch for Two',
+                  'comedy': 'LA Comedy Club Admission for Two',
+                  'complete-package': 'Complete 2-Night Vegas Getaway Package',
+                  'tesla': 'Free 2-Day Tesla Rental',
+                  'blueman': 'Blue Man VIP Night',
+                  'highroller': 'High Roller Package',
+                  'sphere': 'Free Sphere Passes'
+            };
+
+            function openReservation(packageType) {
+                  const modal = document.getElementById('reservationModal');
+                  const packageInput = document.getElementById('package');
+                  packageInput.value = packages[packageType] || 'Selected Package';
+                  modal.style.display = 'flex';
+                  document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                  const modal = document.getElementById('reservationModal');
+                  modal.style.display = 'none';
+                  document.body.style.overflow = 'auto';
+            }
+
+            // Close modal when clicking outside
+            window.onclick = function(event) {
+                  const modal = document.getElementById('reservationModal');
+                  if (event.target === modal) {
+                        closeModal();
+                  }
+            }
+
+            // Form submission
+            document.getElementById('reservationForm').addEventListener('submit', function(e) {
+                  e.preventDefault();
+                  
+                  // Show success message
+                  alert('Thank you for your reservation! Our team will contact you within 24 hours to confirm your package and schedule your resort tour.');
+                  closeModal();
+                  
+                  // Reset form
+                  this.reset();
             });
+
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                  threshold: 0.1,
+                  rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                  entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                              entry.target.style.opacity = '1';
+                              entry.target.style.transform = 'translateY(0)';
+                        }
+                  });
+            }, observerOptions);
+
+            // Initialize scroll animations
+            document.addEventListener('DOMContentLoaded', function() {
+                  const animatableElements = document.querySelectorAll('.package-card, .step-card, .free-package-card');
+                  animatableElements.forEach(el => {
+                        el.style.opacity = '0';
+                        el.style.transform = 'translateY(30px)';
+                        el.style.transition = 'all 0.6s ease-out';
+                        observer.observe(el);
+                  });
+            });
+
+            // Enhanced parallax effect
+            let ticking = false;
+            
+            function updateParallax() {
+                  const scrolled = window.pageYOffset;
+                  const rate = scrolled * -0.3;
+                  const header = document.querySelector('.header');
+                  if (header) {
+                        header.style.transform = `translateY(${rate}px)`;
+                  }
+                  ticking = false;
+            }
+
+            function requestTick() {
+                  if (!ticking) {
+                        requestAnimationFrame(updateParallax);
+                        ticking = true;
+                  }
+            }
+
+            window.addEventListener('scroll', requestTick);
       </script>
 </body>
 
