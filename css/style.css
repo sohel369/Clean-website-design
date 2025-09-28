@@ -1855,6 +1855,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background: linear-gradient(135deg, #c1ccff 0%, #5cafe6 100%);
 }
 
 .package-title {
@@ -2334,7 +2335,35 @@ footer {
 
 .slider-nav:hover {
     background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1);
+    transform: scale(1.01);
+}
+
+.slider-nav2 {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+
+    i {
+        font-size: 24px;
+    }
+}
+
+.slider-nav2:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
 }
 
 .slider-indicators {
